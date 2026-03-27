@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mazely — Enterprise Outreach Email Templates</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { font-family: 'Inter', system-ui, -apple-system, sans-serif; color: #1a1a2e; -webkit-font-smoothing: antialiased; }
+  body { background: #f4f5f7; }
+
+  .header { background: linear-gradient(135deg, #001a3a, #002d5c); color: #fff; padding: 48px; text-align: center; }
+  .header h1 { font-size: 32px; font-weight: 800; margin-bottom: 8px; }
+  .header p { font-size: 15px; opacity: 0.5; }
+  .header a { color: #4da3ff; text-decoration: none; }
+
+  .container { max-width: 800px; margin: 0 auto; padding: 32px 20px 60px; }
+
+  .template { background: #fff; border-radius: 16px; border: 1px solid #e0e4ea; margin-bottom: 32px; overflow: hidden; }
+  .template-header { padding: 20px 28px; background: #f8f9fb; border-bottom: 1px solid #e0e4ea; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
+  .template-header h2 { font-size: 18px; font-weight: 700; color: #111; }
+  .template-header .tag { padding: 4px 12px; border-radius: 10px; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.3px; }
+  .tag-hospital { background: #fde8e8; color: #c53030; }
+  .tag-university { background: #e6f0fb; color: #0066c0; }
+  .tag-general { background: #e6f9ed; color: #276749; }
+  .tag-followup { background: #fef3cd; color: #856404; }
+  .tag-confirm { background: #f0e6fb; color: #6b21a8; }
+
+  .template-body { padding: 28px; }
+
+  .subject-lines { margin-bottom: 20px; }
+  .subject-lines h4 { font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px; color: #888; font-weight: 600; margin-bottom: 8px; }
+  .subject-line { display: block; padding: 8px 14px; margin-bottom: 6px; background: #f8f9fb; border-radius: 8px; font-size: 14px; color: #333; border: 1px solid #eee; cursor: pointer; transition: all 0.15s; }
+  .subject-line:hover { background: #e6f0fb; border-color: #b3d4f3; }
+
+  .email-content { font-size: 14.5px; line-height: 1.75; color: #444; padding: 20px 24px; background: #fafbfc; border-radius: 12px; border: 1px solid #e8ecf0; white-space: pre-wrap; font-family: 'Inter', sans-serif; }
+
+  .placeholder { color: #0074d9; font-weight: 600; background: #e6f0fb; padding: 1px 6px; border-radius: 4px; font-size: 13px; }
+
+  .copy-hint { text-align: center; padding: 12px; font-size: 12px; color: #aaa; border-top: 1px solid #e0e4ea; }
+
+  .tip { background: #e6f0fb; border: 1px solid #b3d4f3; border-radius: 12px; padding: 20px 24px; margin-bottom: 32px; }
+  .tip h3 { font-size: 15px; font-weight: 700; color: #0066c0; margin-bottom: 6px; }
+  .tip p { font-size: 14px; color: #555; line-height: 1.6; }
+
+  .print-bar { position: fixed; top: 0; left: 0; right: 0; background: #111; color: #fff; padding: 10px 24px; font-size: 13px; display: flex; justify-content: space-between; align-items: center; z-index: 100; }
+  .print-bar a { color: #4da3ff; text-decoration: none; font-weight: 600; }
+  @media print { .print-bar { display: none; } body { background: #fff; } .template { page-break-inside: avoid; } }
+</style>
+</head>
+<body>
+
+<div class="print-bar">
+  <span>Mazely Email Templates &mdash; Click any email to select, then copy</span>
+  <a href="/">Back to mazely.app</a>
+</div>
+
+<div class="header">
+  <h1>Enterprise Outreach Email Templates</h1>
+  <p>Ready-to-use templates for institutional decision-makers &nbsp;&middot;&nbsp; <a href="https://mazely.app">mazely.app</a></p>
+</div>
+
+<div class="container">
+
+<div class="tip">
+  <h3>How to use these templates</h3>
+  <p>Replace all <span class="placeholder">[bracketed text]</span> with your specific details. Personalize the opening line for each recipient. For best results, reference something specific about their institution (recent expansion, news mention, or a known wayfinding challenge).</p>
+</div>
+
+<!-- TEMPLATE 1: Hospitals -->
+<div class="template">
+  <div class="template-header">
+    <h2>Hospital / Healthcare Outreach</h2>
+    <span class="tag tag-hospital">Healthcare</span>
+  </div>
+  <div class="template-body">
+    <div class="subject-lines">
+      <h4>Subject line options (pick one)</h4>
+      <span class="subject-line">Reducing wayfinding confusion at <span class="placeholder">[Hospital Name]</span> &mdash; free pilot</span>
+      <span class="subject-line">How <span class="placeholder">[Hospital Name]</span> visitors could navigate without asking for help</span>
+      <span class="subject-line">Indoor navigation for <span class="placeholder">[Hospital Name]</span> &mdash; no app, no hardware</span>
+    </div>
+    <div class="email-content">Dear <span class="placeholder">[Name / Title]</span>,
+
+I'm reaching out because wayfinding in large healthcare facilities is a challenge we've studied closely &mdash; and one that directly impacts patient satisfaction scores, appointment adherence, and staff workload.
+
+At many hospitals, visitors ask for directions an average of two to three times per visit. Reception staff, nurses, and security personnel spend significant time redirecting confused patients and families &mdash; time that could be spent on higher-value tasks.
+
+<strong>Mazely is an indoor navigation platform built for exactly this problem.</strong> Visitors scan a QR code at any entrance and receive step-by-step visual directions &mdash; using real photos of your corridors &mdash; on their phone. No app download, no hardware installation, no Bluetooth.
+
+Here's what makes it relevant for <span class="placeholder">[Hospital Name]</span>:
+
+&bull; <strong>Zero visitor friction</strong> &mdash; works on any smartphone via QR scan
+&bull; <strong>Photo-based directions</strong> &mdash; visitors see actual photos of the path ahead, not abstract maps
+&bull; <strong>Multi-language support</strong> &mdash; serves diverse patient populations
+&bull; <strong>Analytics dashboard</strong> &mdash; track navigation patterns, peak times, and most-searched departments
+&bull; <strong>Privacy by design</strong> &mdash; no personal data collected from visitors
+
+We're currently offering a <strong>free pilot program</strong> for healthcare institutions. We'll set up Mazely for one building or floor at your facility at no cost, including onboarding support and a 30-day analytics report.
+
+Would you be open to a 20-minute call to see if this could be valuable for <span class="placeholder">[Hospital Name]</span>?
+
+Best regards,
+<span class="placeholder">[Your Name]</span>
+<span class="placeholder">[Title]</span>, Mazely
+<span class="placeholder">[Email]</span> | mazely.app</div>
+  </div>
+  <div class="copy-hint">Click inside the email text, select all (Ctrl+A / Cmd+A), and copy</div>
+</div>
+
+<!-- TEMPLATE 2: Universities -->
+<div class="template">
+  <div class="template-header">
+    <h2>University / Higher Education Outreach</h2>
+    <span class="tag tag-university">Education</span>
+  </div>
+  <div class="template-body">
+    <div class="subject-lines">
+      <h4>Subject line options (pick one)</h4>
+      <span class="subject-line">Helping <span class="placeholder">[University Name]</span> students navigate campus from day one</span>
+      <span class="subject-line">Indoor navigation for <span class="placeholder">[University Name]</span> &mdash; free pilot program</span>
+      <span class="subject-line">How <span class="placeholder">[University Name]</span> could simplify campus wayfinding</span>
+    </div>
+    <div class="email-content">Dear <span class="placeholder">[Name / Title]</span>,
+
+Campus navigation is one of those problems that seems small until you see the impact &mdash; confused new students missing their first classes, open day visitors unable to find session rooms, conference attendees wandering between buildings.
+
+<strong>Mazely is an indoor navigation platform designed for complex institutional facilities like university campuses.</strong> Students and visitors scan a QR code at any building entrance and receive step-by-step visual directions to their destination &mdash; using real photos, not abstract maps.
+
+No app download required. No hardware to install. It works on any smartphone.
+
+Here's why this could be valuable for <span class="placeholder">[University Name]</span>:
+
+&bull; <strong>Orientation support</strong> &mdash; new students navigate confidently from day one
+&bull; <strong>Open days &amp; events</strong> &mdash; prospective students and families tour campus independently
+&bull; <strong>Multi-building routing</strong> &mdash; guide people across interconnected campus buildings
+&bull; <strong>Reduce front desk burden</strong> &mdash; fewer routine "where is Room X?" inquiries
+&bull; <strong>Usage analytics</strong> &mdash; identify the most common navigation pain points on campus
+&bull; <strong>Multi-language</strong> &mdash; support international students and visitors
+
+We're offering a <strong>free pilot program</strong> for universities. We'll deploy Mazely in one building on your campus at no cost, with full onboarding support and analytics.
+
+Would you have 15&ndash;20 minutes for a brief demo? I'd be happy to show you how it works using a sample campus layout.
+
+Best regards,
+<span class="placeholder">[Your Name]</span>
+<span class="placeholder">[Title]</span>, Mazely
+<span class="placeholder">[Email]</span> | mazely.app</div>
+  </div>
+  <div class="copy-hint">Click inside the email text, select all (Ctrl+A / Cmd+A), and copy</div>
+</div>
+
+<!-- TEMPLATE 3: General -->
+<div class="template">
+  <div class="template-header">
+    <h2>General Institutional Outreach</h2>
+    <span class="tag tag-general">Government / Public</span>
+  </div>
+  <div class="template-body">
+    <div class="subject-lines">
+      <h4>Subject line options (pick one)</h4>
+      <span class="subject-line">Improving visitor experience at <span class="placeholder">[Institution Name]</span></span>
+      <span class="subject-line">Indoor navigation for <span class="placeholder">[Institution Name]</span> &mdash; no app required</span>
+      <span class="subject-line">Free pilot: digital wayfinding for <span class="placeholder">[Institution Name]</span></span>
+    </div>
+    <div class="email-content">Dear <span class="placeholder">[Name / Title]</span>,
+
+Public-facing buildings &mdash; courthouses, civic centers, government offices, and large public facilities &mdash; serve thousands of visitors who are often navigating the space for the first time and under time pressure.
+
+Paper directories and static signage help, but they can't adapt to construction, department moves, or the needs of visitors with limited English proficiency or accessibility requirements.
+
+<strong>Mazely is a digital indoor navigation platform that solves this.</strong> Visitors scan a QR code at any entrance and receive step-by-step visual directions on their smartphone &mdash; using real photos of your facility's corridors and hallways.
+
+Key advantages for <span class="placeholder">[Institution Name]</span>:
+
+&bull; <strong>No app required</strong> &mdash; visitors scan a QR code and navigate immediately
+&bull; <strong>Photo-based directions</strong> &mdash; clear guidance that doesn't rely on map-reading skills
+&bull; <strong>Accessibility-friendly</strong> &mdash; supports visitors with mobility challenges
+&bull; <strong>Multi-language</strong> &mdash; serve diverse visitor populations without multilingual signage
+&bull; <strong>Real-time updates</strong> &mdash; update directions in minutes, not weeks of signage reprinting
+&bull; <strong>Privacy-first</strong> &mdash; no personal data collected; anonymous navigation
+&bull; <strong>Analytics</strong> &mdash; understand visitor flow patterns and most-requested destinations
+
+We're offering a <strong>free pilot program</strong> &mdash; we'll set up Mazely for one floor or building at no cost, including full onboarding and a 30-day usage report.
+
+Would you be open to a brief conversation to explore whether this would be a fit for <span class="placeholder">[Institution Name]</span>?
+
+Best regards,
+<span class="placeholder">[Your Name]</span>
+<span class="placeholder">[Title]</span>, Mazely
+<span class="placeholder">[Email]</span> | mazely.app</div>
+  </div>
+  <div class="copy-hint">Click inside the email text, select all (Ctrl+A / Cmd+A), and copy</div>
+</div>
+
+<!-- TEMPLATE 4: Follow-up -->
+<div class="template">
+  <div class="template-header">
+    <h2>Follow-Up Email</h2>
+    <span class="tag tag-followup">Follow-Up</span>
+  </div>
+  <div class="template-body">
+    <div class="subject-lines">
+      <h4>Subject line</h4>
+      <span class="subject-line">Following up &mdash; indoor navigation for <span class="placeholder">[Institution Name]</span></span>
+    </div>
+    <div class="email-content">Hi <span class="placeholder">[Name]</span>,
+
+I reached out last week about Mazely, our indoor navigation platform for institutions. I wanted to follow up briefly in case the message was missed.
+
+The core idea is simple: visitors scan a QR code and get photo-guided directions on their phone. No app download, no hardware, no complexity.
+
+We're offering free pilots for institutions like <span class="placeholder">[Institution Name]</span> &mdash; we handle setup for one building or floor, and you get a 30-day analytics report showing how visitors use the system.
+
+If this isn't the right time, no problem at all. If it would be helpful, I'm happy to send a 3-minute video walkthrough or schedule a quick demo at your convenience.
+
+Best regards,
+<span class="placeholder">[Your Name]</span>
+<span class="placeholder">[Title]</span>, Mazely
+<span class="placeholder">[Email]</span> | mazely.app</div>
+  </div>
+  <div class="copy-hint">Click inside the email text, select all (Ctrl+A / Cmd+A), and copy</div>
+</div>
+
+<!-- TEMPLATE 5: Demo Confirmation -->
+<div class="template">
+  <div class="template-header">
+    <h2>Demo Booking Confirmation</h2>
+    <span class="tag tag-confirm">Confirmation</span>
+  </div>
+  <div class="template-body">
+    <div class="subject-lines">
+      <h4>Subject line</h4>
+      <span class="subject-line">Your Mazely demo is confirmed &mdash; <span class="placeholder">[Date/Time]</span></span>
+    </div>
+    <div class="email-content">Hi <span class="placeholder">[Name]</span>,
+
+Thank you for scheduling a demo with Mazely. Here are the details:
+
+<strong>Date:</strong> <span class="placeholder">[Date]</span>
+<strong>Time:</strong> <span class="placeholder">[Time]</span> <span class="placeholder">[Timezone]</span>
+<strong>Duration:</strong> 20 minutes
+<strong>Meeting link:</strong> <span class="placeholder">[Link]</span>
+
+During the demo, we'll cover:
+1. A live walkthrough of the Mazely navigation experience (visitor side)
+2. The admin dashboard &mdash; how you'd map and manage your facility
+3. Analytics and reporting capabilities
+4. Q&amp;A &mdash; bring any questions about deployment, security, or pricing
+
+If you'd like to include any colleagues from facilities management, IT, or operations, feel free to forward this invite.
+
+Looking forward to speaking with you.
+
+Best regards,
+<span class="placeholder">[Your Name]</span>
+<span class="placeholder">[Title]</span>, Mazely
+<span class="placeholder">[Email]</span> | mazely.app</div>
+  </div>
+  <div class="copy-hint">Click inside the email text, select all (Ctrl+A / Cmd+A), and copy</div>
+</div>
+
+</div>
+</body>
+</html>

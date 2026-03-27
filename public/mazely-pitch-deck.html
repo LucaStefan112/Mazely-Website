@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mazely — Enterprise Pitch Deck</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { font-family: 'Inter', system-ui, -apple-system, sans-serif; -webkit-font-smoothing: antialiased; }
+
+  .slide { width: 100%; max-width: 960px; margin: 0 auto; aspect-ratio: 16/9; padding: 56px 64px; display: flex; flex-direction: column; justify-content: center; position: relative; page-break-after: always; overflow: hidden; }
+  .slide:last-child { page-break-after: avoid; }
+
+  .dark { background: linear-gradient(135deg, #001a3a, #002d5c, #00172b); color: #fff; }
+  .light { background: #fff; color: #1a1a2e; }
+  .blue { background: linear-gradient(135deg, #0074d9, #0052a3); color: #fff; }
+
+  .slide-num { position: absolute; bottom: 24px; right: 32px; font-size: 12px; font-weight: 500; opacity: 0.3; }
+  .brand { position: absolute; bottom: 24px; left: 32px; font-size: 13px; font-weight: 700; opacity: 0.3; }
+
+  h1 { font-size: 44px; font-weight: 800; line-height: 1.1; letter-spacing: -1px; }
+  h2 { font-size: 36px; font-weight: 800; line-height: 1.15; letter-spacing: -0.5px; margin-bottom: 12px; }
+  h3 { font-size: 20px; font-weight: 700; margin-bottom: 6px; }
+
+  .label { display: inline-flex; align-items: center; gap: 6px; padding: 5px 14px; border-radius: 14px; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 16px; }
+  .dark .label { background: rgba(0,116,217,0.15); color: #4da3ff; border: 1px solid rgba(0,116,217,0.3); }
+  .light .label { background: #e6f0fb; color: #0066c0; }
+  .blue .label { background: rgba(255,255,255,0.15); color: rgba(255,255,255,0.9); }
+
+  .accent { color: #4da3ff; }
+  .light .accent { color: #0074d9; }
+
+  .sub { font-size: 17px; line-height: 1.6; opacity: 0.6; margin-top: 8px; max-width: 600px; }
+
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; }
+  .grid-4 { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 14px; }
+
+  .card { padding: 20px; border-radius: 14px; }
+  .dark .card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.06); }
+  .light .card { background: #f8f9fb; border: 1px solid #e8ecf0; }
+  .blue .card { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.15); }
+
+  .card h3 { font-size: 15px; }
+  .card p { font-size: 13px; line-height: 1.55; opacity: 0.65; }
+
+  .bullets { list-style: none; padding: 0; }
+  .bullets li { padding: 6px 0; font-size: 15px; display: flex; align-items: flex-start; gap: 10px; }
+  .bullets li::before { content: '\2713'; font-weight: 700; flex-shrink: 0; }
+  .dark .bullets li::before { color: #4da3ff; }
+  .light .bullets li::before { color: #0074d9; }
+  .blue .bullets li::before { color: rgba(255,255,255,0.8); }
+  .bullets li { opacity: 0.8; }
+
+  .stat { text-align: center; }
+  .stat .num { font-size: 32px; font-weight: 800; }
+  .dark .stat .num { color: #4da3ff; }
+  .light .stat .num { color: #0074d9; }
+  .stat .desc { font-size: 12px; opacity: 0.5; margin-top: 4px; }
+
+  .step-row { display: flex; gap: 12px; align-items: center; margin-bottom: 16px; }
+  .step-circle { width: 36px; height: 36px; border-radius: 50%; background: linear-gradient(135deg, #0074d9, #0052a3); color: #fff; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 15px; flex-shrink: 0; }
+  .light .step-circle { box-shadow: 0 4px 12px rgba(0,116,217,0.2); }
+
+  .comparison { width: 100%; font-size: 12px; border-collapse: collapse; }
+  .comparison th { padding: 8px 10px; text-align: left; font-weight: 600; border-bottom: 2px solid rgba(255,255,255,0.1); font-size: 11px; text-transform: uppercase; letter-spacing: 0.3px; }
+  .comparison td { padding: 8px 10px; border-bottom: 1px solid rgba(255,255,255,0.05); opacity: 0.7; }
+  .comparison .yes { opacity: 1; color: #4da3ff; font-weight: 600; }
+
+  .print-bar { position: fixed; top: 0; left: 0; right: 0; background: #111; color: #fff; padding: 10px 24px; font-size: 13px; display: flex; justify-content: space-between; align-items: center; z-index: 100; }
+  .print-bar a { color: #4da3ff; text-decoration: none; font-weight: 600; }
+  @media print { .print-bar { display: none; } .slide { aspect-ratio: auto; min-height: 680px; } }
+</style>
+</head>
+<body>
+
+<div class="print-bar">
+  <span>Mazely Pitch Deck &mdash; Use <strong>Ctrl+P / Cmd+P</strong> to save as PDF (Landscape recommended)</span>
+  <a href="/">Back to mazely.app</a>
+</div>
+
+<!-- SLIDE 1: Title -->
+<div class="slide dark">
+  <div class="label">Enterprise Indoor Navigation Platform</div>
+  <h1>Digital Indoor Wayfinding<br><span class="accent">Infrastructure</span></h1>
+  <p class="sub">Every visitor finds their way. Every time.<br>Purpose-built for hospitals, universities, and public institutions.</p>
+  <div style="margin-top:auto;font-size:13px;opacity:0.3;">mazely.app &nbsp;&middot;&nbsp; enterprise@mazely.app</div>
+  <span class="slide-num">01</span>
+</div>
+
+<!-- SLIDE 2: Problem -->
+<div class="slide light">
+  <div class="label">The Problem</div>
+  <h2>Indoor Navigation Is <span class="accent">Broken at Scale</span></h2>
+  <div class="grid-3" style="margin:24px 0;">
+    <div class="stat"><div class="num">30%</div><div class="desc">of hospital visitors struggle<br>to find their destination</div></div>
+    <div class="stat"><div class="num">2.3x</div><div class="desc">average direction requests<br>per patient visit</div></div>
+    <div class="stat"><div class="num">1000s</div><div class="desc">of staff hours per year<br>spent giving directions</div></div>
+  </div>
+  <ul class="bullets" style="margin-top:20px;">
+    <li>Missed appointments and late arrivals increase operational backlog</li>
+    <li>Patient dissatisfaction lowers HCAHPS and satisfaction scores</li>
+    <li>Accessibility gaps create legal and reputational risk</li>
+    <li>Static signage can't adapt to renovations or department moves</li>
+  </ul>
+  <span class="brand">Mazely</span><span class="slide-num">02</span>
+</div>
+
+<!-- SLIDE 3: Cost of Doing Nothing -->
+<div class="slide dark">
+  <div class="label">The Impact</div>
+  <h2>The Cost of<br><span class="accent">Doing Nothing</span></h2>
+  <div class="grid-2" style="margin-top:24px;">
+    <div class="card">
+      <h3>Operational Cost</h3>
+      <p>Staff diverted from core responsibilities. Reception and security handling routine directions instead of their primary duties.</p>
+    </div>
+    <div class="card">
+      <h3>Patient / Visitor Experience</h3>
+      <p>Anxiety, frustration, and negative first impressions. Missed appointments cascade into scheduling backlogs.</p>
+    </div>
+    <div class="card">
+      <h3>Accessibility Risk</h3>
+      <p>Visitors with disabilities, language barriers, or cognitive challenges are disproportionately affected by poor wayfinding.</p>
+    </div>
+    <div class="card">
+      <h3>Maintenance Overhead</h3>
+      <p>Every renovation, department move, or construction project requires expensive signage reprints and redistribution.</p>
+    </div>
+  </div>
+  <span class="brand">Mazely</span><span class="slide-num">03</span>
+</div>
+
+<!-- SLIDE 4: Solution -->
+<div class="slide light">
+  <div class="label">Introducing Mazely</div>
+  <h2>Indoor Navigation Platform<br>for <span class="accent">Institutions</span></h2>
+  <p class="sub" style="margin-bottom:24px;">Web-based. No app download. No hardware. Photo-guided directions anyone can follow.</p>
+  <div class="grid-3">
+    <div class="card" style="text-align:center;">
+      <div style="font-size:28px;font-weight:800;color:#0074d9;margin-bottom:8px;">1</div>
+      <h3>Scan QR Code</h3>
+      <p>At any entrance, lobby, or checkpoint</p>
+    </div>
+    <div class="card" style="text-align:center;">
+      <div style="font-size:28px;font-weight:800;color:#0074d9;margin-bottom:8px;">2</div>
+      <h3>Select Destination</h3>
+      <p>Searchable directory of rooms and departments</p>
+    </div>
+    <div class="card" style="text-align:center;">
+      <div style="font-size:28px;font-weight:800;color:#0074d9;margin-bottom:8px;">3</div>
+      <h3>Follow Photos</h3>
+      <p>Step-by-step visual directions with real images</p>
+    </div>
+  </div>
+  <span class="brand">Mazely</span><span class="slide-num">04</span>
+</div>
+
+<!-- SLIDE 5: Platform Features -->
+<div class="slide dark">
+  <div class="label">Platform</div>
+  <h2><span class="accent">Enterprise-Grade</span> Capabilities</h2>
+  <div class="grid-3" style="margin-top:24px;">
+    <div class="card"><h3>Photo-Guided Nav</h3><p>Real corridor photos at every turn and decision point</p></div>
+    <div class="card"><h3>QR Entry Points</h3><p>Zero-friction access from any smartphone camera</p></div>
+    <div class="card"><h3>Multi-Floor Routing</h3><p>Seamless navigation across floors and buildings</p></div>
+    <div class="card"><h3>Smart Pathfinding</h3><p>Optimal routes with accessibility considerations</p></div>
+    <div class="card"><h3>Multi-Language</h3><p>EN, RO, FR, DE &mdash; more on request</p></div>
+    <div class="card"><h3>Analytics Dashboard</h3><p>Sessions, destinations, feedback, and patterns</p></div>
+  </div>
+  <span class="brand">Mazely</span><span class="slide-num">05</span>
+</div>
+
+<!-- SLIDE 6: Industries -->
+<div class="slide light">
+  <div class="label">Industry Solutions</div>
+  <h2>Purpose-Built for <span class="accent">Your Institution</span></h2>
+  <div class="grid-3" style="margin-top:24px;">
+    <div class="card">
+      <h3>Hospitals &amp; Healthcare</h3>
+      <ul class="bullets" style="font-size:13px;">
+        <li>Reduce missed appointments</li>
+        <li>Improve patient satisfaction</li>
+        <li>Free clinical staff time</li>
+        <li>ADA compliance support</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Universities</h3>
+      <ul class="bullets" style="font-size:13px;">
+        <li>Student orientation</li>
+        <li>Open day navigation</li>
+        <li>Multi-building routing</li>
+        <li>International student support</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Government &amp; Public</h3>
+      <ul class="bullets" style="font-size:13px;">
+        <li>Citizen experience</li>
+        <li>Accessibility mandates</li>
+        <li>Multilingual populations</li>
+        <li>Anonymous navigation</li>
+      </ul>
+    </div>
+  </div>
+  <span class="brand">Mazely</span><span class="slide-num">06</span>
+</div>
+
+<!-- SLIDE 7: Deployment -->
+<div class="slide dark">
+  <div class="label">Deployment</div>
+  <h2>Live in <span class="accent">2&ndash;4 Weeks</span></h2>
+  <div style="margin-top:20px;">
+    <div class="step-row"><div class="step-circle">1</div><div><strong>Discovery &amp; Planning</strong> <span style="opacity:0.4;font-size:13px;">&mdash; Week 1</span></div></div>
+    <div class="step-row"><div class="step-circle">2</div><div><strong>Facility Mapping</strong> <span style="opacity:0.4;font-size:13px;">&mdash; Weeks 1&ndash;2</span></div></div>
+    <div class="step-row"><div class="step-circle">3</div><div><strong>Visual Content &amp; QR Deployment</strong> <span style="opacity:0.4;font-size:13px;">&mdash; Weeks 2&ndash;3</span></div></div>
+    <div class="step-row"><div class="step-circle">4</div><div><strong>Staff Training &amp; Go Live</strong> <span style="opacity:0.4;font-size:13px;">&mdash; Week 3&ndash;4</span></div></div>
+    <div class="step-row"><div class="step-circle">5</div><div><strong>Monitor &amp; Optimize</strong> <span style="opacity:0.4;font-size:13px;">&mdash; Ongoing</span></div></div>
+  </div>
+  <div class="grid-3" style="margin-top:20px;">
+    <div class="card" style="text-align:center;padding:14px;"><p style="font-size:13px;opacity:0.7;">No hardware installation</p></div>
+    <div class="card" style="text-align:center;padding:14px;"><p style="font-size:13px;opacity:0.7;">No network changes</p></div>
+    <div class="card" style="text-align:center;padding:14px;"><p style="font-size:13px;opacity:0.7;">No app for visitors</p></div>
+  </div>
+  <span class="brand">Mazely</span><span class="slide-num">07</span>
+</div>
+
+<!-- SLIDE 8: Security -->
+<div class="slide light">
+  <div class="label">Security &amp; Privacy</div>
+  <h2>Enterprise-Grade. <span class="accent">Institution-Ready.</span></h2>
+  <div class="grid-2" style="margin-top:20px;">
+    <div class="card">
+      <h3>Privacy by Design</h3>
+      <ul class="bullets" style="font-size:13px;"><li>No personal data collected</li><li>No accounts required</li><li>No tracking cookies</li><li>Anonymous sessions</li></ul>
+    </div>
+    <div class="card">
+      <h3>Data Ownership</h3>
+      <ul class="bullets" style="font-size:13px;"><li>Your data stays yours</li><li>Never shared with third parties</li><li>Full export anytime</li><li>Deletion on request</li></ul>
+    </div>
+    <div class="card">
+      <h3>Infrastructure</h3>
+      <ul class="bullets" style="font-size:13px;"><li>SOC 2-aligned cloud</li><li>TLS 1.3 + AES-256</li><li>Regular security audits</li><li>99.9% uptime SLA</li></ul>
+    </div>
+    <div class="card">
+      <h3>Compliance</h3>
+      <ul class="bullets" style="font-size:13px;"><li>GDPR compliant</li><li>ADA support</li><li>HIPAA minimized by design</li><li>Data residency options</li></ul>
+    </div>
+  </div>
+  <span class="brand">Mazely</span><span class="slide-num">08</span>
+</div>
+
+<!-- SLIDE 9: Comparison -->
+<div class="slide dark">
+  <div class="label">Comparison</div>
+  <h2>Why <span class="accent">Mazely</span></h2>
+  <table class="comparison" style="margin-top:20px;">
+    <thead><tr><th></th><th>Mazely</th><th>Signage</th><th>Beacons</th><th>Native App</th></tr></thead>
+    <tbody>
+      <tr><td>No hardware</td><td class="yes">&#10003;</td><td>N/A</td><td>&#10007;</td><td>N/A</td></tr>
+      <tr><td>No app download</td><td class="yes">&#10003;</td><td>N/A</td><td>Often required</td><td>&#10007;</td></tr>
+      <tr><td>Photo directions</td><td class="yes">&#10003;</td><td>&#10007;</td><td>Rarely</td><td>Varies</td></tr>
+      <tr><td>Real-time updates</td><td class="yes">&#10003;</td><td>&#10007;</td><td>&#10003;</td><td>&#10003;</td></tr>
+      <tr><td>Multi-language</td><td class="yes">&#10003;</td><td>Limited</td><td>Varies</td><td>Varies</td></tr>
+      <tr><td>Deployment</td><td class="yes">2&ndash;4 weeks</td><td>Months</td><td>4&ndash;8 weeks</td><td>3&ndash;6 months</td></tr>
+      <tr><td>Visitor friction</td><td class="yes">Zero</td><td>N/A</td><td>Medium</td><td>High</td></tr>
+    </tbody>
+  </table>
+  <span class="brand">Mazely</span><span class="slide-num">09</span>
+</div>
+
+<!-- SLIDE 10: CTA -->
+<div class="slide blue" style="text-align:center;align-items:center;">
+  <div class="label">Get Started</div>
+  <h1 style="font-size:40px;">Start Your Free<br>Pilot Program</h1>
+  <p style="font-size:17px;opacity:0.8;margin:16px 0 32px;max-width:500px;">No cost, no obligation. Full setup for one building or floor with dedicated onboarding and a 30-day analytics report.</p>
+  <div class="grid-4" style="width:100%;max-width:640px;">
+    <div class="card" style="text-align:center;padding:14px;"><div style="font-size:20px;font-weight:800;">1</div><p style="font-size:12px;">Book Demo</p></div>
+    <div class="card" style="text-align:center;padding:14px;"><div style="font-size:20px;font-weight:800;">2</div><p style="font-size:12px;">Consultation</p></div>
+    <div class="card" style="text-align:center;padding:14px;"><div style="font-size:20px;font-weight:800;">3</div><p style="font-size:12px;">Free Pilot</p></div>
+    <div class="card" style="text-align:center;padding:14px;"><div style="font-size:20px;font-weight:800;">4</div><p style="font-size:12px;">Contract</p></div>
+  </div>
+  <div style="margin-top:32px;">
+    <div style="font-size:22px;font-weight:700;">enterprise@mazely.app</div>
+    <div style="font-size:15px;opacity:0.6;margin-top:6px;">mazely.app/demo &nbsp;&middot;&nbsp; linkedin.com/company/mazely-app</div>
+  </div>
+  <span class="brand" style="color:rgba(255,255,255,0.3);">Mazely</span><span class="slide-num" style="color:rgba(255,255,255,0.3);">10</span>
+</div>
+
+</body>
+</html>

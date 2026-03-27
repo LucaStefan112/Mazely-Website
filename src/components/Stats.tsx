@@ -5,7 +5,7 @@ import { useI18n } from "@/lib/i18n/context";
 import { useInView } from "@/lib/useInView";
 import { useEffect, useState } from "react";
 
-function AnimatedNumber({ target, inView }: { target: number; inView: boolean }) {
+function AnimatedNumber({ target, inView, suffix = "" }: { target: number; inView: boolean; suffix?: string }) {
   const [count, setCount] = useState(0);
 
   useEffect(() => {
@@ -25,7 +25,7 @@ function AnimatedNumber({ target, inView }: { target: number; inView: boolean })
     return () => clearInterval(timer);
   }, [target, inView]);
 
-  return <>{count.toLocaleString()}</>;
+  return <>{count.toLocaleString()}{suffix}</>;
 }
 
 export default function Stats() {

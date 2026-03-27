@@ -17,11 +17,9 @@ export default function CTA() {
           transition={{ duration: 0.6 }}
           className="relative"
         >
-          {/* Glow */}
           <div className="absolute -inset-4 bg-gradient-to-r from-primary-500/20 via-accent-500/20 to-primary-500/20 rounded-[2.5rem] blur-2xl" />
 
           <div className="relative text-center py-16 sm:py-20 px-6 sm:px-12 rounded-3xl bg-gradient-to-br from-primary-500 to-primary-700 overflow-hidden">
-            {/* Pattern */}
             <div
               className="absolute inset-0 opacity-10"
               style={{
@@ -29,28 +27,39 @@ export default function CTA() {
                 backgroundSize: "24px 24px",
               }}
             />
-
-            {/* Floating blobs */}
             <motion.div
               animate={{ scale: [1, 1.3, 1], rotate: [0, 90, 0] }}
               transition={{ duration: 12, repeat: Infinity }}
               className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/4"
-            />
-            <motion.div
-              animate={{ scale: [1, 0.8, 1], rotate: [0, -90, 0] }}
-              transition={{ duration: 10, repeat: Infinity }}
-              className="absolute bottom-0 left-0 w-48 h-48 bg-white/10 rounded-full blur-3xl translate-y-1/2 -translate-x-1/4"
             />
 
             <div className="relative z-10">
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight max-w-3xl mx-auto">
                 {t.cta.title}
               </h2>
-              <p className="mt-4 text-lg text-primary-100 max-w-xl mx-auto">
+              <p className="mt-4 text-lg text-primary-100 max-w-2xl mx-auto">
                 {t.cta.subtitle}
               </p>
+
+              {/* Enterprise funnel steps */}
+              <div className="mt-8 flex flex-wrap items-center justify-center gap-3 text-sm text-primary-200">
+                {t.cta.steps.map((step, i) => (
+                  <span key={i} className="flex items-center gap-2">
+                    <span className="w-6 h-6 rounded-full bg-white/20 text-white text-xs font-bold flex items-center justify-center">
+                      {i + 1}
+                    </span>
+                    <span>{step}</span>
+                    {i < t.cta.steps.length - 1 && (
+                      <svg className="w-4 h-4 text-primary-300 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                      </svg>
+                    )}
+                  </span>
+                ))}
+              </div>
+
               <a
-                href="#contact"
+                href="/#contact"
                 className="inline-flex items-center gap-2 mt-8 px-8 py-4 text-base font-semibold text-primary-700 bg-white rounded-full hover:bg-primary-50 shadow-xl shadow-primary-900/20 transition-all hover:-translate-y-0.5 group"
               >
                 {t.cta.button}

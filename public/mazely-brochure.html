@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mazely — Enterprise Indoor Wayfinding Brochure</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { font-family: 'Inter', system-ui, -apple-system, sans-serif; color: #1a1a2e; -webkit-font-smoothing: antialiased; }
+  body { background: #fff; }
+
+  .page { max-width: 900px; margin: 0 auto; padding: 60px 48px; page-break-after: always; min-height: 100vh; position: relative; }
+  .page:last-child { page-break-after: avoid; }
+
+  /* Cover */
+  .cover { background: linear-gradient(135deg, #001a3a 0%, #002d5c 50%, #00172b 100%); color: #fff; display: flex; flex-direction: column; justify-content: center; align-items: flex-start; }
+  .cover .badge { display: inline-flex; align-items: center; gap: 8px; padding: 8px 16px; border-radius: 20px; background: rgba(0,116,217,0.15); border: 1px solid rgba(0,116,217,0.3); color: #4da3ff; font-size: 13px; font-weight: 500; margin-bottom: 32px; }
+  .cover .badge::before { content: ''; width: 8px; height: 8px; border-radius: 50%; background: #0074d9; }
+  .cover h1 { font-size: 52px; font-weight: 800; line-height: 1.1; letter-spacing: -1px; margin-bottom: 16px; }
+  .cover h1 span { background: linear-gradient(90deg, #4da3ff, #85c1ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+  .cover .tagline { font-size: 22px; color: rgba(255,255,255,0.6); margin-bottom: 40px; line-height: 1.5; }
+  .cover .meta { font-size: 14px; color: rgba(255,255,255,0.35); }
+  .cover .meta a { color: #4da3ff; text-decoration: none; }
+  .cover .logo { font-size: 24px; font-weight: 800; background: linear-gradient(90deg, #4da3ff, #85c1ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 48px; }
+
+  /* Section pages */
+  .section-label { display: inline-flex; align-items: center; gap: 8px; padding: 6px 14px; border-radius: 16px; background: #e6f0fb; color: #0066c0; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 16px; }
+  h2 { font-size: 36px; font-weight: 800; letter-spacing: -0.5px; line-height: 1.15; color: #111; margin-bottom: 12px; }
+  h2 span { color: #0074d9; }
+  h3 { font-size: 20px; font-weight: 700; color: #111; margin-bottom: 8px; }
+  .subtitle { font-size: 17px; color: #666; line-height: 1.6; margin-bottom: 32px; }
+  p { font-size: 15px; color: #555; line-height: 1.7; }
+
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+  .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; }
+
+  .card { padding: 24px; border-radius: 16px; border: 1px solid #e8ecf0; background: #fafbfc; }
+  .card h3 { font-size: 17px; margin-bottom: 6px; }
+  .card p { font-size: 14px; }
+
+  .icon-box { width: 44px; height: 44px; border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 14px; color: #fff; font-size: 20px; font-weight: 700; }
+
+  .check-list { list-style: none; padding: 0; }
+  .check-list li { display: flex; align-items: flex-start; gap: 10px; padding: 8px 0; font-size: 15px; color: #444; line-height: 1.5; }
+  .check-list li::before { content: '\2713'; color: #0074d9; font-weight: 700; flex-shrink: 0; margin-top: 1px; }
+
+  .stat-card { text-align: center; padding: 24px 16px; border-radius: 16px; background: linear-gradient(135deg, #e6f0fb, #f0f7ff); }
+  .stat-card .value { font-size: 32px; font-weight: 800; color: #0074d9; }
+  .stat-card .label { font-size: 13px; color: #666; margin-top: 4px; }
+
+  .step { display: flex; gap: 20px; margin-bottom: 28px; }
+  .step-num { width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(135deg, #0074d9, #0066c0); color: #fff; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 16px; flex-shrink: 0; }
+  .step-content h3 { font-size: 17px; margin-bottom: 4px; }
+  .step-content .timeline { display: inline-block; padding: 2px 10px; border-radius: 10px; background: #e6f0fb; color: #0066c0; font-size: 12px; font-weight: 600; margin-bottom: 6px; }
+  .step-content p { font-size: 14px; color: #666; }
+
+  .comparison-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  .comparison-table th { text-align: left; padding: 10px 12px; background: #f0f4f8; color: #333; font-weight: 600; border-bottom: 2px solid #ddd; }
+  .comparison-table td { padding: 10px 12px; border-bottom: 1px solid #eee; color: #555; }
+  .comparison-table tr:nth-child(even) td { background: #fafbfc; }
+  .comparison-table .check { color: #0074d9; font-weight: 700; }
+  .comparison-table .cross { color: #ccc; }
+
+  /* Dark section */
+  .dark { background: linear-gradient(135deg, #001a3a, #002d5c, #00172b); color: #fff; }
+  .dark h2 { color: #fff; }
+  .dark .subtitle { color: rgba(255,255,255,0.55); }
+  .dark .section-label { background: rgba(0,116,217,0.15); color: #4da3ff; border: 1px solid rgba(0,116,217,0.3); }
+  .dark .card { background: rgba(255,255,255,0.04); border-color: rgba(255,255,255,0.08); }
+  .dark .card h3 { color: #fff; }
+  .dark .card p { color: rgba(255,255,255,0.55); }
+  .dark .check-list li { color: rgba(255,255,255,0.7); }
+  .dark .check-list li::before { color: #4da3ff; }
+
+  /* CTA page */
+  .cta-box { padding: 48px; border-radius: 24px; background: linear-gradient(135deg, #0074d9, #0052a3); color: #fff; text-align: center; margin-top: 40px; }
+  .cta-box h2 { color: #fff; font-size: 32px; margin-bottom: 12px; }
+  .cta-box p { color: rgba(255,255,255,0.8); font-size: 16px; margin-bottom: 24px; }
+  .cta-box .email { font-size: 20px; font-weight: 700; color: #fff; }
+  .cta-box .url { font-size: 16px; color: rgba(255,255,255,0.6); margin-top: 8px; }
+
+  .footer-bar { margin-top: 40px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); display: flex; justify-content: space-between; align-items: center; font-size: 13px; color: rgba(255,255,255,0.3); }
+  .footer-bar a { color: #4da3ff; text-decoration: none; }
+
+  /* Print */
+  @media print {
+    body { background: #fff; }
+    .page { padding: 40px 36px; min-height: auto; }
+    .no-print { display: none; }
+  }
+
+  .print-bar { position: fixed; top: 0; left: 0; right: 0; background: #111; color: #fff; padding: 10px 24px; font-size: 13px; display: flex; justify-content: space-between; align-items: center; z-index: 100; }
+  .print-bar a { color: #4da3ff; text-decoration: none; font-weight: 600; }
+  @media print { .print-bar { display: none; } }
+</style>
+</head>
+<body>
+
+<div class="print-bar no-print">
+  <span>Mazely Enterprise Brochure &mdash; Use <strong>Ctrl+P / Cmd+P</strong> to save as PDF</span>
+  <a href="/">Back to mazely.app</a>
+</div>
+
+<!-- COVER -->
+<div class="page cover" style="padding-top:100px;">
+  <div class="logo">Mazely</div>
+  <div class="badge">Enterprise Indoor Navigation Platform</div>
+  <h1>Digital Indoor Wayfinding<br><span>Infrastructure</span></h1>
+  <p class="tagline">Every visitor finds their way. Every time.<br>Purpose-built for hospitals, universities, and public institutions.</p>
+  <div class="meta">
+    <a href="https://mazely.app">mazely.app</a> &nbsp;&middot;&nbsp; enterprise@mazely.app &nbsp;&middot;&nbsp; <a href="https://www.linkedin.com/company/mazely-app">LinkedIn</a>
+  </div>
+</div>
+
+<!-- THE CHALLENGE -->
+<div class="page">
+  <div class="section-label">The Challenge</div>
+  <h2>Visitors Shouldn't Need a Guide<br>to Navigate <span>Your Building</span></h2>
+  <p class="subtitle">Complex facilities create daily wayfinding challenges that impact everyone who walks through your doors.</p>
+  <div class="grid-3" style="margin-bottom:32px;">
+    <div class="stat-card">
+      <div class="value">30%</div>
+      <div class="label">of first-time hospital visitors<br>struggle to find their destination</div>
+    </div>
+    <div class="stat-card">
+      <div class="value">2.3x</div>
+      <div class="label">average direction requests<br>per patient visit</div>
+    </div>
+    <div class="stat-card">
+      <div class="value">1000s</div>
+      <div class="label">of staff hours spent annually<br>giving wayfinding assistance</div>
+    </div>
+  </div>
+  <p>Traditional solutions &mdash; printed maps, static signage, information desks &mdash; are expensive to maintain, impossible to update in real time, and leave visitors without help outside business hours. Every confused visitor is a missed appointment, a negative experience, or an accessibility gap.</p>
+</div>
+
+<!-- THE SOLUTION -->
+<div class="page">
+  <div class="section-label">The Solution</div>
+  <h2>Indoor Navigation <span>That Works</span></h2>
+  <p class="subtitle">Mazely is a web-based indoor navigation platform that guides visitors through your facility using step-by-step visual directions with real photographs.</p>
+
+  <div class="grid-3" style="margin-bottom:32px;">
+    <div class="card" style="text-align:center;padding:32px 20px;">
+      <div style="font-size:36px;margin-bottom:8px;">1</div>
+      <h3>Scan</h3>
+      <p>Visitor scans a QR code at any building entrance</p>
+    </div>
+    <div class="card" style="text-align:center;padding:32px 20px;">
+      <div style="font-size:36px;margin-bottom:8px;">2</div>
+      <h3>Select</h3>
+      <p>Choose destination from a searchable directory</p>
+    </div>
+    <div class="card" style="text-align:center;padding:32px 20px;">
+      <div style="font-size:36px;margin-bottom:8px;">3</div>
+      <h3>Follow</h3>
+      <p>Step-by-step photo-guided directions to destination</p>
+    </div>
+  </div>
+  <p><strong>No app download. No special hardware. No registration.</strong> It works on any smartphone. No Bluetooth. No GPS dependency.</p>
+</div>
+
+<!-- CAPABILITIES -->
+<div class="page">
+  <div class="section-label">Platform Capabilities</div>
+  <h2>Built for <span>Complex Facilities</span></h2>
+  <p class="subtitle">Enterprise-grade features designed for institutional scale and complexity.</p>
+  <div class="grid-2">
+    <div class="card">
+      <h3>Photo-Guided Directions</h3>
+      <p>Real photographs guide visitors through every corridor, turn, and decision point. No abstract maps to interpret.</p>
+    </div>
+    <div class="card">
+      <h3>Zero-Friction QR Access</h3>
+      <p>Visitors scan a QR code at any entrance and navigate instantly. No app, no account creation, no pairing.</p>
+    </div>
+    <div class="card">
+      <h3>Multi-Floor &amp; Multi-Building</h3>
+      <p>Seamless routing across floors and between buildings via elevators, stairs, and covered walkways.</p>
+    </div>
+    <div class="card">
+      <h3>Intelligent Pathfinding</h3>
+      <p>Advanced algorithms calculate optimal routes in real time, considering accessibility and floor transitions.</p>
+    </div>
+    <div class="card">
+      <h3>Multi-Language Support</h3>
+      <p>Serve diverse populations with navigation in English, Romanian, French, and German. More on request.</p>
+    </div>
+    <div class="card">
+      <h3>Actionable Analytics</h3>
+      <p>Track sessions, popular destinations, search patterns, and feedback. Identify pain points and measure improvements.</p>
+    </div>
+  </div>
+</div>
+
+<!-- FOR HOSPITALS -->
+<div class="page">
+  <div class="section-label">For Hospitals &amp; Healthcare</div>
+  <h2>Improve Patient Experience.<br><span>Reduce Operational Burden.</span></h2>
+  <p class="subtitle">Hospital wayfinding directly impacts patient satisfaction scores, appointment adherence, and staff productivity.</p>
+  <ul class="check-list">
+    <li>Reduce missed appointments and patient no-shows</li>
+    <li>Improve HCAHPS patient experience scores</li>
+    <li>Free clinical staff from routine wayfinding tasks</li>
+    <li>Support ADA and accessibility compliance goals</li>
+    <li>Adapt instantly to department moves and construction reroutes</li>
+    <li>Serve diverse patient populations with multi-language support</li>
+    <li>Emergency rerouting capabilities for facility disruptions</li>
+    <li>Analytics on visitor flow patterns and peak navigation times</li>
+  </ul>
+</div>
+
+<!-- FOR UNIVERSITIES -->
+<div class="page">
+  <div class="section-label">For Universities &amp; Education</div>
+  <h2>Navigate Campus Complexity<br><span>with Confidence</span></h2>
+  <p class="subtitle">University campuses are inherently complex &mdash; buildings with inconsistent layouts, classes in unfamiliar halls, events spanning multiple venues.</p>
+  <ul class="check-list">
+    <li>Seamless orientation for new students from day one</li>
+    <li>Independent navigation for open days, tours, and prospective families</li>
+    <li>Multi-building campus routing across interconnected structures</li>
+    <li>Conference and event support for attendees finding session rooms</li>
+    <li>Reduce front desk and security staff direction inquiries</li>
+    <li>Support international students with multi-language navigation</li>
+    <li>Accessibility-friendly routing options for students with disabilities</li>
+    <li>Semester-proof: update routes when classrooms and offices change</li>
+  </ul>
+</div>
+
+<!-- DEPLOYMENT -->
+<div class="page dark">
+  <div class="section-label">Enterprise Deployment</div>
+  <h2>From Discovery to Live Navigation<br>in Weeks</h2>
+  <p class="subtitle">Non-disruptive deployment with dedicated support. No hardware to install, no network changes, no IT burden.</p>
+  <div class="step">
+    <div class="step-num">1</div>
+    <div class="step-content">
+      <div class="timeline">Week 1</div>
+      <h3>Discovery &amp; Planning</h3>
+      <p>We assess your facility layout, visitor flow patterns, and wayfinding pain points to design an optimal deployment plan.</p>
+    </div>
+  </div>
+  <div class="step">
+    <div class="step-num">2</div>
+    <div class="step-content">
+      <div class="timeline">Weeks 1&ndash;2</div>
+      <h3>Facility Mapping</h3>
+      <p>Your team maps rooms, corridors, and waypoints using our interactive floor plan designer &mdash; with full guidance.</p>
+    </div>
+  </div>
+  <div class="step">
+    <div class="step-num">3</div>
+    <div class="step-content">
+      <div class="timeline">Weeks 2&ndash;3</div>
+      <h3>Visual Content &amp; QR Deployment</h3>
+      <p>Directional photographs are captured. QR codes are generated and placed at strategic entry points.</p>
+    </div>
+  </div>
+  <div class="step">
+    <div class="step-num">4</div>
+    <div class="step-content">
+      <div class="timeline">Week 3&ndash;4</div>
+      <h3>Staff Training &amp; Go Live</h3>
+      <p>Brief training sessions for staff. Navigation goes live. Analytics tracking begins immediately.</p>
+    </div>
+  </div>
+  <div class="step">
+    <div class="step-num">5</div>
+    <div class="step-content">
+      <div class="timeline">Ongoing</div>
+      <h3>Monitor &amp; Optimize</h3>
+      <p>Review analytics, gather visitor feedback, and optimize routes based on real usage data.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ADMIN -->
+<div class="page">
+  <div class="section-label">Administration</div>
+  <h2>Full Control from a<br><span>Centralized Dashboard</span></h2>
+  <p class="subtitle">Building administrators manage everything through an intuitive web dashboard &mdash; no technical expertise required.</p>
+  <div class="grid-2">
+    <ul class="check-list">
+      <li>Interactive drag-and-drop floor map designer</li>
+      <li>Bulk image upload with camera capture support</li>
+      <li>QR code generation and management for all locations</li>
+    </ul>
+    <ul class="check-list">
+      <li>Export floor maps as PNG or SVG</li>
+      <li>Role-based access control for administrators</li>
+      <li>Real-time analytics and visitor feedback dashboard</li>
+    </ul>
+  </div>
+  <div style="margin-top:32px;">
+    <h3>Analytics You Can Act On</h3>
+    <div class="grid-3" style="margin-top:16px;">
+      <div class="card"><h3>Most Searched</h3><p>Identify the most common destinations visitors search for</p></div>
+      <div class="card"><h3>Peak Times</h3><p>Understand when navigation demand is highest</p></div>
+      <div class="card"><h3>Completion Rate</h3><p>Track how many visitors successfully reach their destination</p></div>
+    </div>
+  </div>
+</div>
+
+<!-- SECURITY -->
+<div class="page">
+  <div class="section-label">Security &amp; Privacy</div>
+  <h2>Designed for <span>Institutional Trust</span></h2>
+  <p class="subtitle">Public institutions require solutions that meet strict standards for security, privacy, and data governance.</p>
+  <div class="grid-2">
+    <div class="card">
+      <h3>Privacy by Design</h3>
+      <ul class="check-list">
+        <li>No personal data collected from visitors</li>
+        <li>No account creation or login required</li>
+        <li>No tracking cookies or behavioral profiling</li>
+        <li>Fully anonymous navigation sessions</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Data Ownership</h3>
+      <ul class="check-list">
+        <li>All facility data belongs to your institution</li>
+        <li>Data is never shared with or sold to third parties</li>
+        <li>Full export capabilities at any time</li>
+        <li>Data deletion available on request</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Infrastructure Security</h3>
+      <ul class="check-list">
+        <li>SOC 2-aligned cloud infrastructure</li>
+        <li>Encrypted in transit (TLS 1.3) and at rest (AES-256)</li>
+        <li>Regular security audits and assessments</li>
+        <li>99.9% uptime SLA for enterprise</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Compliance</h3>
+      <ul class="check-list">
+        <li>GDPR-compliant data handling</li>
+        <li>Supports ADA accessibility compliance</li>
+        <li>No PHI collected &mdash; HIPAA minimized by design</li>
+        <li>Data residency options on request</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- COMPARISON -->
+<div class="page">
+  <div class="section-label">Why Mazely</div>
+  <h2>How We <span>Compare</span></h2>
+  <p class="subtitle">Mazely delivers superior visitor experience with the lowest deployment friction and ongoing cost.</p>
+  <table class="comparison-table">
+    <thead>
+      <tr>
+        <th style="width:28%"></th>
+        <th style="width:18%">Mazely</th>
+        <th style="width:18%">Traditional Signage</th>
+        <th style="width:18%">Beacon-Based</th>
+        <th style="width:18%">Native Apps</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>No hardware installation</td><td class="check">&#10003;</td><td>N/A</td><td class="cross">&#10007;</td><td>N/A</td></tr>
+      <tr><td>No app download</td><td class="check">&#10003;</td><td>N/A</td><td class="cross">Often required</td><td class="cross">&#10007;</td></tr>
+      <tr><td>Photo-based directions</td><td class="check">&#10003;</td><td class="cross">&#10007;</td><td class="cross">Rarely</td><td>Varies</td></tr>
+      <tr><td>Real-time updates</td><td class="check">&#10003;</td><td class="cross">&#10007; (reprint)</td><td class="check">&#10003;</td><td class="check">&#10003;</td></tr>
+      <tr><td>Multi-language</td><td class="check">&#10003;</td><td>Limited</td><td>Varies</td><td>Varies</td></tr>
+      <tr><td>Usage analytics</td><td class="check">&#10003;</td><td class="cross">&#10007;</td><td class="check">&#10003;</td><td class="check">&#10003;</td></tr>
+      <tr><td>Deployment time</td><td><strong>2&ndash;4 weeks</strong></td><td>Months</td><td>4&ndash;8 weeks</td><td>3&ndash;6 months</td></tr>
+      <tr><td>Ongoing maintenance cost</td><td><strong>Low</strong></td><td>High</td><td>Medium</td><td>High</td></tr>
+      <tr><td>Visitor friction</td><td><strong>Zero</strong></td><td>N/A</td><td>Medium</td><td>High</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- CTA -->
+<div class="page" style="display:flex;flex-direction:column;justify-content:center;">
+  <div style="text-align:center;margin-bottom:48px;">
+    <div class="section-label" style="display:inline-flex;">Free Pilot Program</div>
+  </div>
+  <div class="cta-box">
+    <h2>Start Your Free Pilot Program</h2>
+    <p>Experience Mazely at your facility with a no-cost, no-obligation pilot.<br>Full setup for one building or floor, including onboarding and a 30-day analytics report.</p>
+    <div style="margin:32px 0 8px;">
+      <div class="email">enterprise@mazely.app</div>
+      <div class="url">mazely.app/demo</div>
+    </div>
+  </div>
+  <div style="text-align:center;margin-top:40px;">
+    <div style="display:inline-flex;gap:32px;font-size:14px;color:#888;">
+      <span><strong style="color:#0074d9">1.</strong> Book a Demo</span>
+      <span><strong style="color:#0074d9">2.</strong> Facility Consultation</span>
+      <span><strong style="color:#0074d9">3.</strong> Free Pilot Program</span>
+      <span><strong style="color:#0074d9">4.</strong> Enterprise Contract</span>
+    </div>
+  </div>
+  <div class="footer-bar" style="border-top-color:#eee;color:#aaa;margin-top:auto;">
+    <span>&copy; 2026 Mazely. All rights reserved.</span>
+    <span><a href="https://mazely.app" style="color:#0074d9;">mazely.app</a> &nbsp;&middot;&nbsp; <a href="https://www.linkedin.com/company/mazely-app" style="color:#0074d9;">LinkedIn</a></span>
+  </div>
+</div>
+
+</body>
+</html>

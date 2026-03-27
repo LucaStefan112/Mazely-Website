@@ -11,6 +11,7 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [langOpen, setLangOpen] = useState(false);
+  const [solutionsOpen, setSolutionsOpen] = useState(false);
 
   useEffect(() => {
     const handler = () => setScrolled(window.scrollY > 20);
@@ -24,16 +25,20 @@ export default function Navbar() {
     } else {
       document.body.style.overflow = "";
     }
-    return () => {
-      document.body.style.overflow = "";
-    };
+    return () => { document.body.style.overflow = ""; };
   }, [mobileOpen]);
 
   const links = [
-    { href: "#features", label: t.nav.features },
-    { href: "#how-it-works", label: t.nav.howItWorks },
-    { href: "#admin", label: t.nav.admin },
-    { href: "#contact", label: t.nav.contact },
+    { href: "/#features", label: t.nav.features },
+    { href: "/#how-it-works", label: t.nav.howItWorks },
+    { href: "/#deployment", label: t.nav.deployment },
+    { href: "/#security", label: t.nav.security },
+    { href: "/#contact", label: t.nav.contact },
+  ];
+
+  const solutionLinks = [
+    { href: "/hospitals/", label: t.nav.hospitals, icon: "M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" },
+    { href: "/universities/", label: t.nav.universities, icon: "M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222" },
   ];
 
   const locales: { code: Locale; label: string; flag: string }[] = [
@@ -43,13 +48,8 @@ export default function Navbar() {
     { code: "de", label: t.language.de, flag: "DE" },
   ];
 
-  const flagEmoji = (code: string) => {
-    return code
-      .toUpperCase()
-      .split("")
-      .map((c) => String.fromCodePoint(0x1f1e6 + c.charCodeAt(0) - 65))
-      .join("");
-  };
+  const flagEmoji = (code: string) =>
+    code.toUpperCase().split("").map((c) => String.fromCodePoint(0x1f1e6 + c.charCodeAt(0) - 65)).join("");
 
   return (
     <motion.nav
@@ -65,7 +65,7 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
-          <a href="#" className="flex items-center gap-2.5 group">
+          <a href="/" className="flex items-center gap-2.5 group">
             <Image
               src="/icon_transparent.png"
               alt="Mazely"
@@ -80,6 +80,44 @@ export default function Navbar() {
 
           {/* Desktop Nav */}
           <div className="hidden lg:flex items-center gap-1">
+            {/* Solutions Dropdown */}
+            <div className="relative">
+              <button
+                onClick={() => setSolutionsOpen(!solutionsOpen)}
+                onBlur={() => setTimeout(() => setSolutionsOpen(false), 150)}
+                className="flex items-center gap-1 px-4 py-2 text-sm font-medium text-gray-600 hover:text-primary-600 rounded-lg hover:bg-primary-50/50 transition-all"
+              >
+                {t.nav.solutions}
+                <svg className={`w-3.5 h-3.5 transition-transform ${solutionsOpen ? "rotate-180" : ""}`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              <AnimatePresence>
+                {solutionsOpen && (
+                  <motion.div
+                    initial={{ opacity: 0, y: -8, scale: 0.95 }}
+                    animate={{ opacity: 1, y: 0, scale: 1 }}
+                    exit={{ opacity: 0, y: -8, scale: 0.95 }}
+                    transition={{ duration: 0.15 }}
+                    className="absolute left-0 mt-1 w-56 bg-white/90 backdrop-blur-xl rounded-xl shadow-xl border border-gray-100 overflow-hidden"
+                  >
+                    {solutionLinks.map((link) => (
+                      <a
+                        key={link.href}
+                        href={link.href}
+                        className="flex items-center gap-3 px-4 py-3 text-sm text-gray-600 hover:bg-primary-50 hover:text-primary-700 transition-all"
+                      >
+                        <svg className="w-5 h-5 text-primary-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d={link.icon} />
+                        </svg>
+                        <span className="font-medium">{link.label}</span>
+                      </a>
+                    ))}
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
+
             {links.map((link) => (
               <a
                 key={link.href}
@@ -102,22 +140,10 @@ export default function Navbar() {
                 aria-label={t.language.select}
               >
                 <span className="text-base">
-                  {flagEmoji(
-                    locales.find((l) => l.code === locale)?.flag || "GB"
-                  )}
+                  {flagEmoji(locales.find((l) => l.code === locale)?.flag || "GB")}
                 </span>
-                <svg
-                  className={`w-3.5 h-3.5 transition-transform ${langOpen ? "rotate-180" : ""}`}
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M19 9l-7 7-7-7"
-                  />
+                <svg className={`w-3.5 h-3.5 transition-transform ${langOpen ? "rotate-180" : ""}`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                 </svg>
               </button>
               <AnimatePresence>
@@ -132,10 +158,7 @@ export default function Navbar() {
                     {locales.map((l) => (
                       <button
                         key={l.code}
-                        onClick={() => {
-                          setLocale(l.code);
-                          setLangOpen(false);
-                        }}
+                        onClick={() => { setLocale(l.code); setLangOpen(false); }}
                         className={`w-full flex items-center gap-2.5 px-4 py-2.5 text-sm transition-all ${
                           locale === l.code
                             ? "bg-primary-50 text-primary-700 font-medium"
@@ -152,13 +175,10 @@ export default function Navbar() {
             </div>
 
             <a
-              href="https://app.mazely.app"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="/#contact"
               className="px-5 py-2.5 text-sm font-semibold text-white bg-gradient-to-r from-primary-500 to-primary-600 rounded-full hover:from-primary-600 hover:to-primary-700 shadow-lg shadow-primary-500/25 hover:shadow-primary-500/40 transition-all hover:-translate-y-0.5 flex items-center gap-1.5"
             >
-              {t.nav.goToApp}
-              <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" /></svg>
+              {t.nav.requestDemo}
             </a>
           </div>
 
@@ -190,6 +210,23 @@ export default function Navbar() {
             className="lg:hidden bg-white/95 backdrop-blur-xl border-t border-gray-100"
           >
             <div className="px-4 py-4 space-y-1">
+              {/* Solutions section */}
+              <div className="px-4 py-2 text-xs font-semibold text-gray-400 uppercase tracking-wider">
+                {t.nav.solutions}
+              </div>
+              {solutionLinks.map((link) => (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  onClick={() => setMobileOpen(false)}
+                  className="block px-4 py-3 text-gray-700 hover:text-primary-600 hover:bg-primary-50/50 rounded-lg transition-all font-medium"
+                >
+                  {link.label}
+                </a>
+              ))}
+
+              <div className="border-t border-gray-100 my-2" />
+
               {links.map((link) => (
                 <a
                   key={link.href}
@@ -200,15 +237,13 @@ export default function Navbar() {
                   {link.label}
                 </a>
               ))}
+
               <div className="pt-3 border-t border-gray-100">
                 <div className="flex gap-2 px-4 pb-3">
                   {locales.map((l) => (
                     <button
                       key={l.code}
-                      onClick={() => {
-                        setLocale(l.code);
-                        setMobileOpen(false);
-                      }}
+                      onClick={() => { setLocale(l.code); setMobileOpen(false); }}
                       className={`flex-1 py-2 text-center rounded-lg text-sm transition-all ${
                         locale === l.code
                           ? "bg-primary-100 text-primary-700 font-medium"
@@ -220,13 +255,11 @@ export default function Navbar() {
                   ))}
                 </div>
                 <a
-                  href="https://app.mazely.app"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href="/#contact"
                   onClick={() => setMobileOpen(false)}
                   className="block w-full text-center px-5 py-3 text-sm font-semibold text-white bg-gradient-to-r from-primary-500 to-primary-600 rounded-full"
                 >
-                  {t.nav.goToApp}
+                  {t.nav.requestDemo}
                 </a>
               </div>
             </div>
