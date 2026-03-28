@@ -89,38 +89,54 @@ export default function DemoPage() {
                     Fill out the form and we&apos;ll schedule a personalized walkthrough at a time that works for you.
                   </p>
 
-                  <form action="mailto:enterprise@mazely.app" method="GET" className="space-y-4">
+                  <form
+                    onSubmit={(e) => {
+                      e.preventDefault();
+                      const form = e.currentTarget;
+                      const data = new FormData(form);
+                      const name = data.get("name") || "";
+                      const email = data.get("email") || "";
+                      const org = data.get("org") || "";
+                      const type = data.get("type") || "";
+                      const role = data.get("role") || "";
+                      const message = data.get("message") || "";
+                      const subject = `Demo Request from ${name}${org ? ` — ${org}` : ""}`;
+                      const body = `Name: ${name}\nEmail: ${email}\nOrganization: ${org}\nInstitution Type: ${type}\nRole: ${role}\n\n${message}`;
+                      window.location.href = `mailto:app@mazely.app?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+                    }}
+                    className="space-y-4"
+                  >
                     <div>
-                      <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
-                      <input type="text" id="name" name="name" className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary-400 focus:ring-2 focus:ring-primary-100 transition-all outline-none text-sm" placeholder="John Smith" />
+                      <label htmlFor="demo-name" className="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
+                      <input type="text" id="demo-name" name="name" required className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary-400 focus:ring-2 focus:ring-primary-100 transition-all outline-none text-sm" placeholder="John Smith" />
                     </div>
                     <div>
-                      <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">Work Email</label>
-                      <input type="email" id="email" name="email" className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary-400 focus:ring-2 focus:ring-primary-100 transition-all outline-none text-sm" placeholder="john@hospital.org" />
+                      <label htmlFor="demo-email" className="block text-sm font-medium text-gray-700 mb-1">Work Email</label>
+                      <input type="email" id="demo-email" name="email" required className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary-400 focus:ring-2 focus:ring-primary-100 transition-all outline-none text-sm" placeholder="john@hospital.org" />
                     </div>
                     <div className="grid grid-cols-2 gap-4">
                       <div>
-                        <label htmlFor="org" className="block text-sm font-medium text-gray-700 mb-1">Organization</label>
-                        <input type="text" id="org" name="org" className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary-400 focus:ring-2 focus:ring-primary-100 transition-all outline-none text-sm" placeholder="City Hospital" />
+                        <label htmlFor="demo-org" className="block text-sm font-medium text-gray-700 mb-1">Organization</label>
+                        <input type="text" id="demo-org" name="org" className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary-400 focus:ring-2 focus:ring-primary-100 transition-all outline-none text-sm" placeholder="City Hospital" />
                       </div>
                       <div>
-                        <label htmlFor="type" className="block text-sm font-medium text-gray-700 mb-1">Institution Type</label>
-                        <select id="type" name="type" className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary-400 focus:ring-2 focus:ring-primary-100 transition-all outline-none text-sm bg-white">
+                        <label htmlFor="demo-type" className="block text-sm font-medium text-gray-700 mb-1">Institution Type</label>
+                        <select id="demo-type" name="type" className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary-400 focus:ring-2 focus:ring-primary-100 transition-all outline-none text-sm bg-white">
                           <option value="">Select...</option>
-                          <option value="hospital">Hospital / Healthcare</option>
-                          <option value="university">University / Education</option>
-                          <option value="government">Government / Public</option>
-                          <option value="other">Other</option>
+                          <option value="Hospital / Healthcare">Hospital / Healthcare</option>
+                          <option value="University / Education">University / Education</option>
+                          <option value="Government / Public">Government / Public</option>
+                          <option value="Other">Other</option>
                         </select>
                       </div>
                     </div>
                     <div>
-                      <label htmlFor="role" className="block text-sm font-medium text-gray-700 mb-1">Your Role</label>
-                      <input type="text" id="role" name="role" className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary-400 focus:ring-2 focus:ring-primary-100 transition-all outline-none text-sm" placeholder="Facilities Director" />
+                      <label htmlFor="demo-role" className="block text-sm font-medium text-gray-700 mb-1">Your Role</label>
+                      <input type="text" id="demo-role" name="role" className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary-400 focus:ring-2 focus:ring-primary-100 transition-all outline-none text-sm" placeholder="Facilities Director" />
                     </div>
                     <div>
-                      <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">Tell us about your facility</label>
-                      <textarea id="message" name="body" rows={3} className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary-400 focus:ring-2 focus:ring-primary-100 transition-all outline-none text-sm resize-none" placeholder="Number of buildings, floors, daily visitors, current wayfinding challenges..." />
+                      <label htmlFor="demo-message" className="block text-sm font-medium text-gray-700 mb-1">Tell us about your facility</label>
+                      <textarea id="demo-message" name="message" rows={3} className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary-400 focus:ring-2 focus:ring-primary-100 transition-all outline-none text-sm resize-none" placeholder="Number of buildings, floors, daily visitors, current wayfinding challenges..." />
                     </div>
                     <button type="submit" className="w-full px-6 py-4 text-base font-semibold text-white bg-gradient-to-r from-primary-500 to-primary-600 rounded-xl hover:from-primary-600 hover:to-primary-700 shadow-lg shadow-primary-500/25 hover:shadow-primary-500/40 transition-all hover:-translate-y-0.5">
                       Request Demo

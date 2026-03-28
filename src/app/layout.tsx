@@ -122,7 +122,7 @@ export default function RootLayout({
                 "@type": "Organization",
                 name: "Mazely",
                 url: "https://mazely.app",
-                email: "enterprise@mazely.app",
+                email: "app@mazely.app",
                 logo: "https://mazely.app/icon_transparent.png",
                 sameAs: [
                   "https://www.linkedin.com/company/mazely-app",

@@ -139,7 +139,7 @@
 - "See Mazely in action at your facility — no cost, no obligation"
 - Free pilot covers one building or floor for 30 days
 - Full onboarding support included
-- Contact: enterprise@mazely.app
+- Contact: app@mazely.app
 - Book a demo: mazely.app/demo
 - QR code linking to demo booking page
 

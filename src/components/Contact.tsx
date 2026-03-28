@@ -119,54 +119,67 @@ export default function Contact() {
               </p>
 
               <form
-                action={`mailto:${t.contact.email}`}
-                method="GET"
+                onSubmit={(e) => {
+                  e.preventDefault();
+                  const form = e.currentTarget;
+                  const data = new FormData(form);
+                  const name = data.get("name") || "";
+                  const email = data.get("email") || "";
+                  const org = data.get("org") || "";
+                  const role = data.get("role") || "";
+                  const message = data.get("message") || "";
+                  const subject = `Demo Request from ${name}${org ? ` — ${org}` : ""}`;
+                  const body = `Name: ${name}\nEmail: ${email}\nOrganization: ${org}\nRole: ${role}\n\n${message}`;
+                  window.location.href = `mailto:${t.contact.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+                }}
                 className="space-y-4"
               >
                 <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
+                  <label htmlFor="contact-name" className="block text-sm font-medium text-gray-700 mb-1">
                     {t.contact.formName}
                   </label>
                   <input
                     type="text"
-                    id="name"
+                    id="contact-name"
                     name="name"
+                    required
                     className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary-400 focus:ring-2 focus:ring-primary-100 transition-all outline-none text-sm"
                     placeholder="John Smith"
                   />
                 </div>
                 <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
+                  <label htmlFor="contact-email" className="block text-sm font-medium text-gray-700 mb-1">
                     {t.contact.formEmail}
                   </label>
                   <input
                     type="email"
-                    id="email"
+                    id="contact-email"
                     name="email"
+                    required
                     className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary-400 focus:ring-2 focus:ring-primary-100 transition-all outline-none text-sm"
                     placeholder="john@hospital.org"
                   />
                 </div>
                 <div className="grid grid-cols-2 gap-4">
                   <div>
-                    <label htmlFor="org" className="block text-sm font-medium text-gray-700 mb-1">
+                    <label htmlFor="contact-org" className="block text-sm font-medium text-gray-700 mb-1">
                       {t.contact.formOrg}
                     </label>
                     <input
                       type="text"
-                      id="org"
+                      id="contact-org"
                       name="org"
                       className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary-400 focus:ring-2 focus:ring-primary-100 transition-all outline-none text-sm"
                       placeholder="City Hospital"
                     />
                   </div>
                   <div>
-                    <label htmlFor="role" className="block text-sm font-medium text-gray-700 mb-1">
+                    <label htmlFor="contact-role" className="block text-sm font-medium text-gray-700 mb-1">
                       {t.contact.formRole}
                     </label>
                     <input
                       type="text"
-                      id="role"
+                      id="contact-role"
                       name="role"
                       className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary-400 focus:ring-2 focus:ring-primary-100 transition-all outline-none text-sm"
                       placeholder="Facilities Director"
@@ -174,12 +187,12 @@ export default function Contact() {
                   </div>
                 </div>
                 <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
+                  <label htmlFor="contact-message" className="block text-sm font-medium text-gray-700 mb-1">
                     {t.contact.formMessage}
                   </label>
                   <textarea
-                    id="message"
-                    name="body"
+                    id="contact-message"
+                    name="message"
                     rows={3}
                     className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary-400 focus:ring-2 focus:ring-primary-100 transition-all outline-none text-sm resize-none"
                     placeholder="Tell us about your buildings, number of floors, and current wayfinding challenges..."

@@ -117,10 +117,10 @@ export interface Translations {
     compliance: { title: string; points: string[] };
   };
   stats: {
-    buildings: string;
-    floors: string;
-    navigations: string;
+    deployment: string;
+    hardware: string;
     languages: string;
+    uptime: string;
   };
   cta: {
     title: string;
@@ -416,10 +416,10 @@ const en: Translations = {
     },
   },
   stats: {
-    buildings: "Institutions Served",
-    floors: "Floors Mapped",
-    navigations: "Visitors Guided",
+    deployment: "Weeks to Deploy",
+    hardware: "Hardware Required",
     languages: "Languages Supported",
+    uptime: "Platform Uptime SLA",
   },
   cta: {
     title: "Start Your Free Pilot Program",
@@ -438,7 +438,7 @@ const en: Translations = {
     title: "Talk to Our Enterprise Team",
     subtitle:
       "Ready to improve wayfinding at your institution? Our team will walk you through the platform and design a deployment plan tailored to your facility.",
-    email: "enterprise@mazely.app",
+    email: "app@mazely.app",
     emailLabel: "Enterprise inquiries",
     demoTitle: "Request a Demo",
     demoSubtitle: "Fill out the form and we'll schedule a personalized walkthrough of the Mazely platform.",
@@ -723,10 +723,10 @@ const ro: Translations = {
     },
   },
   stats: {
-    buildings: "Institutii Deservite",
-    floors: "Etaje Cartografiate",
-    navigations: "Vizitatori Ghidati",
+    deployment: "Saptamani pentru Implementare",
+    hardware: "Hardware Necesar",
     languages: "Limbi Suportate",
+    uptime: "SLA Disponibilitate Platforma",
   },
   cta: {
     title: "Incepeti Programul Pilot Gratuit",
@@ -745,7 +745,7 @@ const ro: Translations = {
     title: "Vorbiti cu Echipa Enterprise",
     subtitle:
       "Pregatit sa imbunatatiti orientarea in institutia dvs.? Echipa noastra va va ghida prin platforma si va proiecta un plan de implementare.",
-    email: "enterprise@mazely.app",
+    email: "app@mazely.app",
     emailLabel: "Intrebari enterprise",
     demoTitle: "Solicita un Demo",
     demoSubtitle: "Completati formularul si vom programa o prezentare personalizata a platformei Mazely.",
@@ -1030,10 +1030,10 @@ const fr: Translations = {
     },
   },
   stats: {
-    buildings: "Institutions Desservies",
-    floors: "Etages Cartographies",
-    navigations: "Visiteurs Guides",
+    deployment: "Semaines pour Deployer",
+    hardware: "Materiel Requis",
     languages: "Langues Supportees",
+    uptime: "SLA Disponibilite Plateforme",
   },
   cta: {
     title: "Demarrez Votre Programme Pilote Gratuit",
@@ -1052,7 +1052,7 @@ const fr: Translations = {
     title: "Parlez a Notre Equipe Entreprise",
     subtitle:
       "Pret a ameliorer l'orientation dans votre institution? Notre equipe vous guidera a travers la plateforme et concevra un plan de deploiement.",
-    email: "enterprise@mazely.app",
+    email: "app@mazely.app",
     emailLabel: "Demandes entreprise",
     demoTitle: "Demander une Demo",
     demoSubtitle: "Remplissez le formulaire et nous programmerons une presentation personnalisee de la plateforme Mazely.",
@@ -1337,10 +1337,10 @@ const de: Translations = {
     },
   },
   stats: {
-    buildings: "Betreute Institutionen",
-    floors: "Kartierte Stockwerke",
-    navigations: "Gefuhrte Besucher",
+    deployment: "Wochen bis zur Bereitstellung",
+    hardware: "Hardware Erforderlich",
     languages: "Unterstutzte Sprachen",
+    uptime: "Plattform-Verfugbarkeits-SLA",
   },
   cta: {
     title: "Starten Sie Ihr Kostenloses Pilotprogramm",
@@ -1359,7 +1359,7 @@ const de: Translations = {
     title: "Sprechen Sie mit Unserem Enterprise-Team",
     subtitle:
       "Bereit, die Wegfuhrung in Ihrer Institution zu verbessern? Unser Team fuhrt Sie durch die Plattform und entwirft einen Bereitstellungsplan.",
-    email: "enterprise@mazely.app",
+    email: "app@mazely.app",
     emailLabel: "Enterprise-Anfragen",
     demoTitle: "Demo Anfordern",
     demoSubtitle: "Fullen Sie das Formular aus und wir planen eine personalisierte Prasentation der Mazely-Plattform.",

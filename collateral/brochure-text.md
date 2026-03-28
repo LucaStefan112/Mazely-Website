@@ -236,7 +236,7 @@ Experience Mazely at your facility with a no-cost, no-obligation pilot program.
 4. **Review & Expand** — Evaluate results and scale across your entire campus
 
 **Contact us:**
-- Email: enterprise@mazely.app
+- Email: app@mazely.app
 - Web: mazely.app/demo
 - Schedule directly: mazely.app/demo
 
@@ -249,6 +249,6 @@ Digital Indoor Wayfinding Infrastructure
 
 Every visitor finds their way. Every time.
 
-mazely.app | enterprise@mazely.app
+mazely.app | app@mazely.app
 
 *Purpose-built for hospitals, universities, and public institutions.*
