@@ -3,12 +3,12 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Request a Demo — Mazely Indoor Wayfinding",
   description:
-    "Book a personalized demo of the Mazely indoor navigation platform. See how hospitals, universities, and public institutions use photo-guided wayfinding to improve visitor experience.",
+    "Book a personalized demo of the Mazely indoor navigation platform. See how public buildings, universities, and institutions use photo-guided wayfinding to improve visitor experience.",
   keywords: [
     "mazely demo",
     "indoor navigation demo",
     "wayfinding platform demo",
-    "hospital navigation demo",
+    "building navigation demo",
     "university wayfinding demo",
     "enterprise indoor maps demo",
   ],
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Request a Demo — Mazely Indoor Wayfinding",
     description:
-      "Book a personalized walkthrough of the Mazely platform for your hospital, university, or public institution.",
+      "Book a personalized walkthrough of the Mazely platform for your public building, university, or institution.",
   },
   alternates: {
     canonical: "https://mazely.app/demo/",

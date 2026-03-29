@@ -1,10 +1,17 @@
 "use client";
 
-import { motion } from "motion/react";
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "motion/react";
 import { useI18n } from "@/lib/i18n/context";
 
 export default function Hero() {
   const { t } = useI18n();
+  const [showScroll, setShowScroll] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setShowScroll(false), 10000);
+    return () => clearTimeout(timer);
+  }, []);
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
@@ -137,9 +144,9 @@ export default function Hero() {
           className="mt-16 sm:mt-20 grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-3xl mx-auto"
         >
           {[
-            { icon: "M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4", label: "Hospitals", sub: "Patient wayfinding" },
-            { icon: "M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222", label: "Universities", sub: "Campus navigation" },
             { icon: "M3 21h18M3 10h18M3 7l9-4 9 4M4 10h16v11H4V10z", label: "Government", sub: "Public buildings" },
+            { icon: "M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222", label: "Universities", sub: "Campus navigation" },
+            { icon: "M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4", label: "Hospitals", sub: "Healthcare facilities" },
           ].map((item, i) => (
             <motion.div
               key={i}
@@ -160,22 +167,32 @@ export default function Hero() {
             </motion.div>
           ))}
         </motion.div>
-      </div>
 
-      {/* Scroll indicator */}
-      <motion.div
-        animate={{ y: [0, 8, 0] }}
-        transition={{ duration: 2, repeat: Infinity }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2"
-      >
-        <div className="w-6 h-10 rounded-full border-2 border-gray-300 flex justify-center pt-2">
-          <motion.div
-            animate={{ opacity: [1, 0], y: [0, 12] }}
-            transition={{ duration: 1.5, repeat: Infinity }}
-            className="w-1 h-2 bg-gray-400 rounded-full"
-          />
-        </div>
-      </motion.div>
+        {/* Scroll indicator */}
+        <AnimatePresence>
+          {showScroll && (
+            <motion.div
+              initial={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.6 }}
+              className="mt-12 flex justify-center"
+            >
+              <motion.div
+                animate={{ y: [0, 8, 0] }}
+                transition={{ duration: 2, repeat: Infinity }}
+              >
+                <div className="w-6 h-10 rounded-full border-2 border-gray-300 flex justify-center pt-2">
+                  <motion.div
+                    animate={{ opacity: [1, 0], y: [0, 12] }}
+                    transition={{ duration: 1.5, repeat: Infinity }}
+                    className="w-1 h-2 bg-gray-400 rounded-full"
+                  />
+                </div>
+              </motion.div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </div>
     </section>
   );
 }

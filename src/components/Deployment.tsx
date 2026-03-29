@@ -25,7 +25,7 @@ export default function Deployment() {
   ];
 
   return (
-    <section id="deployment" className="py-24 sm:py-32 relative overflow-hidden" ref={ref}>
+    <section id="deployment" className="pt-24 sm:pt-32 pb-16 sm:pb-20 relative overflow-hidden" ref={ref}>
       <div className="absolute inset-0 -z-10 bg-gradient-to-br from-primary-900 via-primary-800 to-primary-900" />
       <div
         className="absolute inset-0 -z-10 opacity-10"

@@ -37,8 +37,8 @@ export default function Navbar() {
   ];
 
   const solutionLinks = [
-    { href: "/hospitals/", label: t.nav.hospitals, icon: "M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" },
     { href: "/universities/", label: t.nav.universities, icon: "M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222" },
+    { href: "/hospitals/", label: t.nav.hospitals, icon: "M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" },
   ];
 
   const locales: { code: Locale; label: string; flag: string }[] = [
@@ -175,6 +175,17 @@ export default function Navbar() {
             </div>
 
             <a
+              href="https://app.mazely.app"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-5 py-2.5 text-sm font-semibold text-primary-600 border border-primary-200 bg-primary-50/50 hover:bg-primary-100 rounded-full transition-all hover:-translate-y-0.5 flex items-center gap-1.5"
+            >
+              {t.nav.goToApp}
+              <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+              </svg>
+            </a>
+            <a
               href="/#contact"
               className="px-5 py-2.5 text-sm font-semibold text-white bg-gradient-to-r from-primary-500 to-primary-600 rounded-full hover:from-primary-600 hover:to-primary-700 shadow-lg shadow-primary-500/25 hover:shadow-primary-500/40 transition-all hover:-translate-y-0.5 flex items-center gap-1.5"
             >
@@ -254,6 +265,15 @@ export default function Navbar() {
                     </button>
                   ))}
                 </div>
+                <a
+                  href="https://app.mazely.app"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => setMobileOpen(false)}
+                  className="block w-full text-center px-5 py-3 text-sm font-semibold text-primary-600 border border-primary-200 bg-primary-50/50 rounded-full mb-2"
+                >
+                  {t.nav.goToApp}
+                </a>
                 <a
                   href="/#contact"
                   onClick={() => setMobileOpen(false)}

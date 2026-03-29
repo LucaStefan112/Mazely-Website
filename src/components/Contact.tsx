@@ -157,7 +157,7 @@ export default function Contact() {
                     name="email"
                     required
                     className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary-400 focus:ring-2 focus:ring-primary-100 transition-all outline-none text-sm"
-                    placeholder="john@hospital.org"
+                    placeholder="jane@institution.org"
                   />
                 </div>
                 <div className="grid grid-cols-2 gap-4">
@@ -170,7 +170,7 @@ export default function Contact() {
                       id="contact-org"
                       name="org"
                       className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary-400 focus:ring-2 focus:ring-primary-100 transition-all outline-none text-sm"
-                      placeholder="City Hospital"
+                      placeholder="City Hall"
                     />
                   </div>
                   <div>
@@ -182,7 +182,7 @@ export default function Contact() {
                       id="contact-role"
                       name="role"
                       className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary-400 focus:ring-2 focus:ring-primary-100 transition-all outline-none text-sm"
-                      placeholder="Facilities Director"
+                      placeholder="Operations Manager"
                     />
                   </div>
                 </div>

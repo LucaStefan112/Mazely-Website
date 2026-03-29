@@ -175,10 +175,10 @@ const en: Translations = {
   meta: {
     title: "Mazely — Indoor Wayfinding Infrastructure for Institutions",
     description:
-      "Enterprise indoor navigation platform for hospitals, universities, and public institutions. Reduce visitor confusion, improve satisfaction, and gain actionable analytics.",
+      "Enterprise indoor navigation platform for public buildings, universities, and institutions. Reduce visitor confusion, improve satisfaction, and gain actionable analytics.",
     keywords:
-      "indoor navigation, hospital wayfinding, university campus navigation, enterprise indoor maps, institutional wayfinding, QR navigation, building navigation platform, accessibility compliance, visitor experience",
-    ogTitle: "Mazely — Indoor Wayfinding for Hospitals & Universities",
+      "indoor navigation, building wayfinding, university campus navigation, enterprise indoor maps, institutional wayfinding, QR navigation, building navigation platform, accessibility compliance, visitor experience, public building navigation",
+    ogTitle: "Mazely — Indoor Wayfinding for Public Buildings & Institutions",
     ogDescription:
       "Purpose-built indoor navigation for institutions. No app download, no hardware — visitors scan a QR code and follow photo-guided directions.",
   },
@@ -202,7 +202,7 @@ const en: Translations = {
     titleHighlight: "Their Way. Every Time.",
     title2: "",
     subtitle:
-      "Purpose-built indoor wayfinding for hospitals, universities, and public institutions. Reduce confusion, improve visitor satisfaction, and gain actionable navigation analytics — no app download or hardware required.",
+      "Purpose-built indoor wayfinding for public buildings, universities, and institutions. Reduce confusion, improve visitor satisfaction, and gain actionable navigation analytics — no app download or hardware required.",
     cta: "Request a Demo",
     secondaryCta: "See How It Works",
     trustedBy: "Trusted by institutions worldwide",
@@ -219,7 +219,7 @@ const en: Translations = {
     label: "Platform Capabilities",
     title: "Enterprise-Grade Indoor Navigation",
     subtitle:
-      "A complete wayfinding platform designed for the complexity and scale of institutional facilities — from multi-building hospital campuses to sprawling university grounds.",
+      "A complete wayfinding platform designed for the complexity and scale of institutional facilities — from multi-building campuses to sprawling public complexes.",
     visualNav: {
       title: "Photo-Guided Directions",
       description:
@@ -319,7 +319,7 @@ const en: Translations = {
     step4: {
       title: "Arrive with Confidence",
       description:
-        "Visitors reach their destination on time, every time — improving satisfaction, reducing missed appointments, and freeing your staff.",
+        "Visitors reach their destination on time, every time — improving satisfaction, reducing confusion, and freeing your staff.",
     },
   },
   deployment: {
@@ -451,7 +451,7 @@ const en: Translations = {
   },
   footer: {
     description:
-      "Enterprise indoor wayfinding infrastructure for hospitals, universities, and public institutions.",
+      "Enterprise indoor wayfinding infrastructure for public buildings, universities, and institutions.",
     product: "Platform",
     features: "Features",
     howItWorks: "How It Works",
@@ -482,10 +482,10 @@ const ro: Translations = {
   meta: {
     title: "Mazely — Soluția de Orientare Interioară pentru Instituții",
     description:
-      "Platformă de navigare interioară pentru spitale, universități și instituții publice. Reduceți confuzia vizitatorilor și obțineți date utile despre fluxul de persoane.",
+      "Platformă de navigare interioară pentru clădiri publice, universități și instituții. Reduceți confuzia vizitatorilor și obțineți date utile despre fluxul de persoane.",
     keywords:
       "navigare interioară, orientare spital, navigare campus universitar, hărți interioare, orientare instituțională, navigare QR, platformă navigare clădiri",
-    ogTitle: "Mazely — Orientare Interioară pentru Spitale și Universități",
+    ogTitle: "Mazely — Orientare Interioară pentru Clădiri Publice și Universități",
     ogDescription:
       "Navigare interioară pentru instituții. Fără aplicație, fără echipamente — vizitatorii scanează un cod QR și urmează indicațiile foto.",
   },
@@ -509,7 +509,7 @@ const ro: Translations = {
     titleHighlight: "Drumul. De Fiecare Dată.",
     title2: "",
     subtitle:
-      "Sistem de orientare interioară creat pentru spitale, universități și instituții publice. Reduceți confuzia, creșteți satisfacția vizitatorilor și obțineți date valoroase — fără aplicație de instalat sau echipamente suplimentare.",
+      "Sistem de orientare interioară creat pentru clădiri publice, universități și instituții. Reduceți confuzia, creșteți satisfacția vizitatorilor și obțineți date valoroase — fără aplicație de instalat sau echipamente suplimentare.",
     cta: "Solicită un Demo",
     secondaryCta: "Vezi Cum Funcționează",
     trustedBy: "Soluție de încredere pentru instituții",
@@ -526,7 +526,7 @@ const ro: Translations = {
     label: "Funcționalități",
     title: "Navigare Interioară de Nivel Enterprise",
     subtitle:
-      "O platformă completă de orientare, gândită pentru complexitatea clădirilor instituționale — de la campusuri spitalicești la universități cu mai multe corpuri.",
+      "O platformă completă de orientare, gândită pentru complexitatea clădirilor instituționale — de la campusuri universitare la complexuri publice cu mai multe corpuri.",
     visualNav: {
       title: "Direcții Ghidate prin Fotografii",
       description:
@@ -758,7 +758,7 @@ const ro: Translations = {
   },
   footer: {
     description:
-      "Infrastructură de orientare interioară pentru spitale, universități și instituții publice.",
+      "Infrastructură de orientare interioară pentru clădiri publice, universități și instituții.",
     product: "Platformă",
     features: "Funcționalități",
     howItWorks: "Cum Funcționează",
@@ -789,10 +789,10 @@ const fr: Translations = {
   meta: {
     title: "Mazely — Infrastructure d'Orientation Interieure pour Institutions",
     description:
-      "Plateforme de navigation interieure pour hopitaux, universites et institutions publiques. Reduisez la confusion des visiteurs et obtenez des analyses actionnables.",
+      "Plateforme de navigation interieure pour batiments publics, universites et institutions. Reduisez la confusion des visiteurs et obtenez des analyses actionnables.",
     keywords:
       "navigation interieure, orientation hopital, navigation campus universitaire, cartes interieures, orientation institutionnelle, navigation QR",
-    ogTitle: "Mazely — Orientation Interieure pour Hopitaux et Universites",
+    ogTitle: "Mazely — Orientation Interieure pour Batiments Publics et Universites",
     ogDescription:
       "Navigation interieure pour institutions. Sans application, sans materiel — les visiteurs scannent un code QR et suivent les directions photo.",
   },
@@ -816,7 +816,7 @@ const fr: Translations = {
     titleHighlight: "Son Chemin. A Chaque Fois.",
     title2: "",
     subtitle:
-      "Orientation interieure pour hopitaux, universites et institutions publiques. Reduisez la confusion, ameliorez la satisfaction et obtenez des analyses — sans application ni materiel.",
+      "Orientation interieure pour batiments publics, universites et institutions. Reduisez la confusion, ameliorez la satisfaction et obtenez des analyses — sans application ni materiel.",
     cta: "Demander une Demo",
     secondaryCta: "Voir Comment Ca Marche",
     trustedBy: "Fait confiance par les institutions du monde entier",
@@ -1065,7 +1065,7 @@ const fr: Translations = {
   },
   footer: {
     description:
-      "Infrastructure d'orientation interieure pour hopitaux, universites et institutions publiques.",
+      "Infrastructure d'orientation interieure pour batiments publics, universites et institutions.",
     product: "Plateforme",
     features: "Fonctionnalites",
     howItWorks: "Comment Ca Marche",
@@ -1096,10 +1096,10 @@ const de: Translations = {
   meta: {
     title: "Mazely — Innennavigations-Infrastruktur fur Institutionen",
     description:
-      "Innennavigationsplattform fur Krankenhauser, Universitaten und offentliche Einrichtungen. Reduzieren Sie Besucherverwirrung und gewinnen Sie umsetzbare Analysen.",
+      "Innennavigationsplattform fur offentliche Gebaude, Universitaten und Einrichtungen. Reduzieren Sie Besucherverwirrung und gewinnen Sie umsetzbare Analysen.",
     keywords:
       "Innennavigation, Krankenhaus-Wegfuhrung, Campus-Navigation, institutionelle Wegfuhrung, QR-Navigation, Gebaudeplattform",
-    ogTitle: "Mazely — Innennavigation fur Krankenhauser und Universitaten",
+    ogTitle: "Mazely — Innennavigation fur Offentliche Gebaude und Universitaten",
     ogDescription:
       "Innennavigation fur Institutionen. Keine App, keine Hardware — Besucher scannen einen QR-Code und folgen fotobasierten Wegbeschreibungen.",
   },
@@ -1123,7 +1123,7 @@ const de: Translations = {
     titleHighlight: "Seinen Weg. Jedes Mal.",
     title2: "",
     subtitle:
-      "Wegfuhrung fur Krankenhauser, Universitaten und offentliche Einrichtungen. Reduzieren Sie Verwirrung, verbessern Sie die Zufriedenheit und gewinnen Sie Analysen — ohne App oder Hardware.",
+      "Wegfuhrung fur offentliche Gebaude, Universitaten und Einrichtungen. Reduzieren Sie Verwirrung, verbessern Sie die Zufriedenheit und gewinnen Sie Analysen — ohne App oder Hardware.",
     cta: "Demo Anfordern",
     secondaryCta: "So Funktioniert's",
     trustedBy: "Vertraut von Institutionen weltweit",
@@ -1372,7 +1372,7 @@ const de: Translations = {
   },
   footer: {
     description:
-      "Innennavigations-Infrastruktur fur Krankenhauser, Universitaten und offentliche Einrichtungen.",
+      "Innennavigations-Infrastruktur fur offentliche Gebaude, Universitaten und Einrichtungen.",
     product: "Plattform",
     features: "Funktionen",
     howItWorks: "So Funktioniert's",

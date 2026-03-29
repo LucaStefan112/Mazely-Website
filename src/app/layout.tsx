@@ -15,10 +15,10 @@ export const metadata: Metadata = {
     template: "%s | Mazely",
   },
   description:
-    "Enterprise indoor navigation platform for hospitals, universities, and public institutions. Reduce visitor confusion, improve satisfaction, and gain actionable analytics — no app download or hardware required.",
+    "Enterprise indoor navigation platform for public buildings, universities, and institutions. Reduce visitor confusion, improve satisfaction, and gain actionable analytics — no app download or hardware required.",
   keywords: [
     "indoor navigation",
-    "hospital wayfinding",
+    "building wayfinding",
     "university campus navigation",
     "enterprise indoor maps",
     "institutional wayfinding",
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     "accessibility compliance",
     "visitor experience",
     "indoor wayfinding",
-    "patient navigation",
+    "public building navigation",
     "campus wayfinding",
     "digital signage",
     "indoor positioning",
@@ -52,7 +52,7 @@ export const metadata: Metadata = {
     alternateLocale: ["ro_RO", "fr_FR", "de_DE"],
     url: "https://mazely.app",
     siteName: "Mazely",
-    title: "Mazely — Indoor Wayfinding for Hospitals & Universities",
+    title: "Mazely — Indoor Wayfinding for Public Buildings & Institutions",
     description:
       "Purpose-built indoor navigation for institutions. No app download, no hardware — visitors scan a QR code and follow photo-guided directions.",
     images: [
@@ -68,7 +68,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Mazely — Indoor Wayfinding for Institutions",
     description:
-      "Enterprise indoor navigation for hospitals, universities, and public buildings. No app, no hardware — visitors scan and navigate.",
+      "Enterprise indoor navigation for public buildings, universities, and institutions. No app, no hardware — visitors scan and navigate.",
     images: ["/og-image.png"],
   },
   icons: {
@@ -115,7 +115,7 @@ export default function RootLayout({
               applicationCategory: "NavigationApplication",
               operatingSystem: "Web",
               description:
-                "Enterprise indoor wayfinding platform for hospitals, universities, and public institutions. Reduce visitor confusion and gain actionable navigation analytics.",
+                "Enterprise indoor wayfinding platform for public buildings, universities, and institutions. Reduce visitor confusion and gain actionable navigation analytics.",
               url: "https://mazely.app",
               image: "https://mazely.app/logo_transparent.png",
               author: {
@@ -148,7 +148,7 @@ export default function RootLayout({
               ],
               audience: {
                 "@type": "Audience",
-                audienceType: "Hospitals, Universities, Government Buildings, Public Institutions",
+                audienceType: "Government Buildings, Universities, Hospitals, Public Institutions",
               },
               inLanguage: ["en", "ro", "fr", "de"],
             }),
@@ -183,7 +183,7 @@ export default function RootLayout({
                   name: "What is Mazely?",
                   acceptedAnswer: {
                     "@type": "Answer",
-                    text: "Mazely is an enterprise indoor wayfinding platform designed for hospitals, universities, and public institutions. Visitors scan a QR code and receive step-by-step photo-guided directions on their smartphone — no app download or hardware required.",
+                    text: "Mazely is an enterprise indoor wayfinding platform designed for public buildings, universities, and institutions. Visitors scan a QR code and receive step-by-step photo-guided directions on their smartphone — no app download or hardware required.",
                   },
                 },
                 {
@@ -204,10 +204,10 @@ export default function RootLayout({
                 },
                 {
                   "@type": "Question",
-                  name: "Is Mazely suitable for hospitals and healthcare facilities?",
+                  name: "What types of buildings is Mazely suitable for?",
                   acceptedAnswer: {
                     "@type": "Answer",
-                    text: "Yes. Mazely is purpose-built for complex institutional facilities including hospitals. It helps reduce missed appointments, improve patient satisfaction scores, support accessibility compliance, and free clinical staff from giving directions.",
+                    text: "Mazely is purpose-built for complex public-facing buildings and institutions including government buildings, universities, hospitals, civic centers, courthouses, and large office complexes. It helps reduce visitor confusion, improve satisfaction, support accessibility compliance, and free staff from giving directions.",
                   },
                 },
                 {

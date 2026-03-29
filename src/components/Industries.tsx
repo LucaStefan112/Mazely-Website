@@ -5,18 +5,18 @@ import { useI18n } from "@/lib/i18n/context";
 import { useInView } from "@/lib/useInView";
 
 const industryIcons = [
-  // Hospital
-  <svg key="hospital" className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" /></svg>,
-  // University
-  <svg key="university" className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222" /></svg>,
   // Government
   <svg key="government" className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 21h18M3 10h18M3 7l9-4 9 4M4 10h16v11H4V10z" /></svg>,
+  // University
+  <svg key="university" className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222" /></svg>,
+  // Hospital
+  <svg key="hospital" className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" /></svg>,
 ];
 
 const gradients = [
-  "from-rose-500 to-pink-600",
-  "from-primary-500 to-primary-600",
   "from-emerald-500 to-teal-600",
+  "from-primary-500 to-primary-600",
+  "from-rose-500 to-pink-600",
 ];
 
 export default function Industries() {
@@ -24,9 +24,9 @@ export default function Industries() {
   const { ref, inView } = useInView({ threshold: 0.1 });
 
   const industries = [
-    { ...t.industries.hospitals, href: "/hospitals/" },
-    { ...t.industries.universities, href: "/universities/" },
     { ...t.industries.government, href: "#contact" },
+    { ...t.industries.universities, href: "/universities/" },
+    { ...t.industries.hospitals, href: "/hospitals/" },
   ];
 
   return (

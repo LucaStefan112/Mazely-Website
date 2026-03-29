@@ -65,9 +65,9 @@ export default function Footer() {
               {t.footer.solutions}
             </h3>
             <ul className="space-y-3">
-              <li><a href="/hospitals/" className="text-sm text-gray-500 hover:text-primary-600 transition-colors">{t.footer.hospitals}</a></li>
-              <li><a href="/universities/" className="text-sm text-gray-500 hover:text-primary-600 transition-colors">{t.footer.universities}</a></li>
               <li><a href="/#industries" className="text-sm text-gray-500 hover:text-primary-600 transition-colors">{t.footer.government}</a></li>
+              <li><a href="/universities/" className="text-sm text-gray-500 hover:text-primary-600 transition-colors">{t.footer.universities}</a></li>
+              <li><a href="/hospitals/" className="text-sm text-gray-500 hover:text-primary-600 transition-colors">{t.footer.hospitals}</a></li>
             </ul>
           </div>
 
@@ -93,6 +93,7 @@ export default function Footer() {
               <li><a href="/#security" className="text-sm text-gray-500 hover:text-primary-600 transition-colors">{t.footer.security}</a></li>
               <li><a href="/#security" className="text-sm text-gray-500 hover:text-primary-600 transition-colors">{t.footer.privacy}</a></li>
               <li><a href="/demo/" className="text-sm text-gray-500 hover:text-primary-600 transition-colors">{t.nav.requestDemo}</a></li>
+              <li><a href="https://app.mazely.app" target="_blank" rel="noopener noreferrer" className="text-sm text-gray-500 hover:text-primary-600 transition-colors flex items-center gap-1.5">{t.nav.goToApp} <svg className="w-3 h-3 opacity-40" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg></a></li>
             </ul>
           </div>
         </div>
