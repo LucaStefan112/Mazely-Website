@@ -24,8 +24,19 @@ export default function Home() {
         <Features />
         <Industries />
         <HowItWorks />
-        <Deployment />
-        <AdminShowcase />
+        {/* Shared dark container for seamless background between sections */}
+        <div className="relative overflow-hidden">
+          <div className="absolute inset-0 -z-10 bg-gradient-to-br from-primary-900 via-primary-800 to-primary-900" />
+          <div
+            className="absolute inset-0 -z-10 opacity-10"
+            style={{
+              backgroundImage: `radial-gradient(circle at 2px 2px, rgba(255,255,255,0.15) 1px, transparent 0)`,
+              backgroundSize: "32px 32px",
+            }}
+          />
+          <Deployment />
+          <AdminShowcase />
+        </div>
         <Security />
         <CTA />
         <Contact />

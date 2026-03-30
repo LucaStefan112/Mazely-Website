@@ -25,15 +25,7 @@ export default function Deployment() {
   ];
 
   return (
-    <section id="deployment" className="pt-24 sm:pt-32 pb-16 sm:pb-20 relative overflow-hidden" ref={ref}>
-      <div className="absolute inset-0 -z-10 bg-gradient-to-br from-primary-900 via-primary-800 to-primary-900" />
-      <div
-        className="absolute inset-0 -z-10 opacity-10"
-        style={{
-          backgroundImage: `radial-gradient(circle at 2px 2px, rgba(255,255,255,0.15) 1px, transparent 0)`,
-          backgroundSize: "32px 32px",
-        }}
-      />
+    <section id="deployment" className="pt-24 sm:pt-32 pb-16 sm:pb-20 relative" ref={ref}>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}

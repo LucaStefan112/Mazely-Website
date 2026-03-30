@@ -28,15 +28,6 @@ export default function AdminShowcase() {
 
   return (
     <section id="admin" className="pt-16 sm:pt-20 pb-24 sm:pb-32 relative overflow-hidden" ref={ref}>
-      {/* Background - matching Deployment's dark theme for seamless transition */}
-      <div className="absolute inset-0 -z-10 bg-gradient-to-br from-primary-900 via-primary-800 to-primary-900" />
-      <div
-        className="absolute inset-0 -z-10 opacity-10"
-        style={{
-          backgroundImage: `radial-gradient(circle at 2px 2px, rgba(255,255,255,0.15) 1px, transparent 0)`,
-          backgroundSize: "32px 32px",
-        }}
-      />
       {/* Divider line between sections */}
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mb-16 sm:mb-20">
         <div className="h-px bg-gradient-to-r from-transparent via-white/20 to-transparent" />
